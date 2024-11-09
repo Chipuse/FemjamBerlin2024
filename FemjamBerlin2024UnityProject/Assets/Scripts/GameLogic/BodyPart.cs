@@ -58,4 +58,41 @@ public class BodyPart : MonoBehaviour, ITargetable
                 break;
         }
     }
+
+    void ITargetable.TargetedByWater()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByHolyWater()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByMedusasEye()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByIceGem()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByBandaid()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByStinger()
+    {
+        // stinger should reduce the hp to 1 if the eye is the tarhget
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByBasicAttack()
+    {
+        //if body part is eye -> it will deal the last 1 damage so please make sure we already have 1 hp
+        throw new System.NotImplementedException();
+    }
 }

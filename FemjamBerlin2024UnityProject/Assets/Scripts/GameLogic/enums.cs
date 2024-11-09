@@ -22,7 +22,7 @@ public enum BodyPartEnum
 {
     wing,
     mouth,
-    tail,
     arm,
+    tail,
     eye
 }

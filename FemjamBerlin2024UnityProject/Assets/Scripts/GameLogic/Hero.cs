@@ -19,12 +19,12 @@ public class Hero : MonoBehaviour, ITargetable
 
     public void OnPray()
     {
-
+        //Heal some damage, turn water into holy water
     }
 
-    public void OnAttack()
+    public void OnAttack(ITargetable _target)
     {
-
+        // deal damage to target
     }
 
     public void OnUseItem(BaseItem item)
@@ -84,5 +84,40 @@ public class Hero : MonoBehaviour, ITargetable
             default:
                 break;
         }
+    }
+
+    void ITargetable.TargetedByWater()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByHolyWater()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByMedusasEye()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByIceGem()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByBandaid()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByStinger()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    void ITargetable.TargetedByBasicAttack()
+    {
+        throw new System.NotImplementedException();
     }
 }
