@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //we want to start with 9999
-    public int totalMaxHealth = 100;
-    public int currentHealth = 100;
+
+    public int maxHealth = 9999;
+    public int currentHealth = 9999;
+
+    public GameObject healthbar;
+    public void UpdateHealthBar()
+    {
+        healthbar.transform.localScale = new Vector3((float)currentHealth / (float)maxHealth, 1f, 1f);
+
+    }
+
 
     public GameObject wing;
     public GameObject mouth;

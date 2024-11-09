@@ -1,9 +1,11 @@
 using UnityEngine;
-
+using System.Collections;
 public interface ITargetable
 {
     public string INameOfTarget { get; set; }
     public void OnEnterNewAilment(Ailment _ailment);
+
+    public void AffectHealth(int _deltaHealth);
 
     public void TargetedByWater();
     public void TargetedByHolyWater();

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero : MonoBehaviour, ITargetable
@@ -6,10 +8,22 @@ public class Hero : MonoBehaviour, ITargetable
     public int currentHealth = 100;
     public Ailment ailment = Ailment.neutral;
 
-    public 
+    public TextboxText OnAttackText;
+
+    public GameObject healthbar;
+    public void UpdateHealthBar()
+    {
+        healthbar.transform.localScale = new Vector3( (float)currentHealth/(float)maxHealth, 1f, 1f);
+    }
+
+    //inventory
+    public List<Items> inventory = new List<Items>();
+
     void Start()
     {
-        
+        inventory.Add(Items.water);
+        inventory.Add(Items.medEye);
+        inventory.Add(Items.iceGem);
     }
 
     void Update()
@@ -22,9 +36,16 @@ public class Hero : MonoBehaviour, ITargetable
         //Heal some damage, turn water into holy water
     }
 
+    public void OnAttackButton()
+    {
+        GameManager.gameManager.OpenCancelMenu();
+        GameManager.gameManager.chosenItem = null;
+    }
+
     public void OnAttack(ITargetable _target)
     {
         // deal damage to target
+        _target.AffectHealth(-1);
     }
 
     public void OnUseItem(BaseItem item)
@@ -54,7 +75,7 @@ public class Hero : MonoBehaviour, ITargetable
         spriteBanded.SetActive(false);
         spriteDamaged.SetActive(false);
         spriteDead.SetActive(false);
-
+        //activate vfx?
         switch (_ailment)
         {
             case Ailment.neutral:
@@ -120,4 +141,44 @@ public class Hero : MonoBehaviour, ITargetable
     {
         throw new System.NotImplementedException();
     }
+
+    void ITargetable.AffectHealth(int _deltaHealth)
+    {
+        StartCoroutine(AffectHealthCoroutine(_deltaHealth));        
+    }
+
+    private IEnumerator AffectHealthCoroutine(int _deltaHealth)
+    {
+        if(_deltaHealth < 0)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                currentSprite.SetActive(false);
+                yield return new WaitForSeconds(GlobalVariables.blinkTime);
+                currentSprite.SetActive(true);
+                yield return new WaitForSeconds(GlobalVariables.blinkTime);
+            }
+        }
+        else
+        {
+            //its a heal play animation! opr not idc
+        }
+        int targetHealth = currentHealth + _deltaHealth;
+        while(currentHealth != targetHealth)
+        {
+            yield return new WaitForEndOfFrame();
+            if (_deltaHealth < 0)
+                currentHealth--;
+            else
+                currentHealth++;
+        }
+        UpdateHealthBar();
+
+        if (currentHealth <= 0)
+        {
+            GameManager.gameManager.OnHeroDeath();
+        }
+
+    }
+
 }

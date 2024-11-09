@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class BodyPart : MonoBehaviour, ITargetable
 {
     public string NameOfTarget = "sillybean";
     public string INameOfTarget { get { return NameOfTarget; } set { NameOfTarget = INameOfTarget; } }
+
+    public Enemy enemy;
 
     public GameObject spriteNeutral;
     public GameObject spritePetrified;
@@ -94,5 +97,33 @@ public class BodyPart : MonoBehaviour, ITargetable
     {
         //if body part is eye -> it will deal the last 1 damage so please make sure we already have 1 hp
         throw new System.NotImplementedException();
+    }
+
+    void ITargetable.AffectHealth(int _deltaHealth)
+    {
+        StartCoroutine(AffectHealthCoroutine(_deltaHealth));
+
+    }
+
+    private IEnumerator AffectHealthCoroutine(int _deltaHealth)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            currentSprite.SetActive(false);
+            yield return new WaitForSeconds(GlobalVariables.blinkTime);
+            currentSprite.SetActive(true);
+            yield return new WaitForSeconds(GlobalVariables.blinkTime);
+        }
+        int targetHealth = enemy.currentHealth + _deltaHealth;
+        while (enemy.currentHealth != targetHealth)
+        {
+            yield return new WaitForEndOfFrame();
+            if (_deltaHealth < 0)
+                enemy.currentHealth--;
+            else
+                enemy.currentHealth++;
+            enemy.UpdateHealthBar();
+        }
+
     }
 }

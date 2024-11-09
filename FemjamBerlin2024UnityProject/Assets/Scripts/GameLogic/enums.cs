@@ -26,3 +26,18 @@ public enum BodyPartEnum
     tail,
     eye
 }
+
+public enum Items
+{
+    water,
+    holyWater,
+    medEye,
+    iceGem,
+    bandaid,
+    stinger
+}
+
+static class GlobalVariables
+{
+    public static float blinkTime = 0.01f;
+}

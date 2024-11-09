@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -26,7 +27,66 @@ public class GameManager : MonoBehaviour
 
     public GameObject battleMenu;
     public GameObject itemMenu;
+    public List<ItemSlot> SlotList = new List<ItemSlot>();
     public GameObject cancelTargetMenu;
+    public GameObject nextMenu;
+
+    public void OpenItemMenu()
+    {
+        battleMenu.gameObject.SetActive(false);
+        cancelTargetMenu.gameObject.SetActive(false);
+        nextMenu.gameObject.SetActive(false);
+
+        itemMenu.gameObject.SetActive(true);
+
+        if(SlotList.Count <= 0)
+        {
+            //fetch slotscripts
+            foreach (var item in itemMenu.GetComponentsInChildren<ItemSlot>())
+            {
+                SlotList.Add(item);
+            }
+        }
+        for (int i = 0; i < SlotList.Count; i++)
+        {
+            if (i < hero.inventory.Count)
+            {
+                SlotList[i].gameObject.SetActive(true);
+                SlotList[i]. itemType = hero.inventory[i];
+            }
+            else
+                SlotList[i].gameObject.SetActive(false);
+        }
+    }
+
+    public BaseItem chosenItem;
+    public void OpenCancelMenu()
+    {
+        chosenItem = null;
+        battleMenu.gameObject.SetActive(false);
+        cancelTargetMenu.gameObject.SetActive(true);
+        nextMenu.gameObject.SetActive(false);
+        itemMenu.gameObject.SetActive(false);
+
+        if(chosenItem == null)
+        {
+            //basic attack was chosen
+        }
+    }
+
+    public void OnTargetChosen(ITargetable _target)
+    {
+        if(chosenItem != null)
+        {
+            chosenItem.OnUse(_target);
+        }
+        else
+        {
+            //basic attack of hero was selected
+            hero.OnAttack(_target);
+        }
+    }
+
 
     public Inputmode inputMode = Inputmode.menu;
 
@@ -34,5 +94,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public TextboxText OnHeroDeathText;
+    public void OnHeroDeath()
+    {
+        //display Herodeath Text and potential to reload "savestate"/scene
+        Debug.Log("Hero died");
     }
 }
