@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour
         Tail = tail.GetComponent<BodyPart>();
         Arm = arm.GetComponent<BodyPart>();
         Eye = eye.GetComponent<BodyPart>();
+        GameManager.gameManager.latestAttacker=Wing;
     }
 
     void Update()
@@ -113,30 +114,35 @@ public class Enemy : MonoBehaviour
                 if (wing.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.mouth;
+                GameManager.gameManager.latestAttacker=Mouth;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.mouth:
                 if (mouth.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.arm;
+                GameManager.gameManager.latestAttacker=Arm;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.arm:
                 if (arm.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.tail;
+                GameManager.gameManager.latestAttacker=Tail;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.tail:
                 if (tail.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.eye;
+                GameManager.gameManager.latestAttacker=Eye;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.eye:
                 if (eye.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.wing;
+                GameManager.gameManager.latestAttacker=Wing;
                 checkForNextBodyPart();
                 break;
             default:

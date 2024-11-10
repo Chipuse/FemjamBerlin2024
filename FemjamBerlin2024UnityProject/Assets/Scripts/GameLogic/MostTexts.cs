@@ -15,6 +15,7 @@ public class MostTexts : MonoBehaviour
         {
             Destroy(this);
         }
+        DontDestroyOnLoad(this);
     }
 
     public itemText[] itemTexts;
@@ -29,7 +30,7 @@ public class MostTexts : MonoBehaviour
     }
     public void FillTextBox(TextboxText _text)
     {
-        textBox.text = _text.text;
+        textBox.text = _text.Parsed();
     }
 
     public string FindText(Items _item, ItemTextContext _context)
@@ -37,7 +38,7 @@ public class MostTexts : MonoBehaviour
         for (int i = 0; i < itemTexts.Length; i++)
         {
             if (itemTexts[i].item == _item && itemTexts[i].context == _context)
-                return itemTexts[i].text.text;
+                return itemTexts[i].text.Parsed();
         }
 
         return "placeholder";
@@ -48,7 +49,7 @@ public class MostTexts : MonoBehaviour
         for (int i = 0; i < attackTexts.Length; i++)
         {
             if (attackTexts[i].bodyPart == _bodyPart && attackTexts[i].context == _context)
-                return itemTexts[i].text.text;
+                return attackTexts[i].text.Parsed();
         }
 
         return "placeholder";
