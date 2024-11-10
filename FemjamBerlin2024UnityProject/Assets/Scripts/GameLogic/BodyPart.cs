@@ -7,6 +7,8 @@ public class BodyPart : MonoBehaviour, ITargetable
     public bool isOpenEye = false;
     public string INameOfTarget { get { return NameOfTarget; } set { NameOfTarget = INameOfTarget; } }
 
+    public Ailment ailmentState = Ailment.neutral;
+
     public Enemy enemy;
 
     public GameObject spriteNeutral;
@@ -31,6 +33,8 @@ public class BodyPart : MonoBehaviour, ITargetable
 
     public void OnEnterNewAilment(Ailment _ailment)
     {
+        ailmentState = _ailment;
+
         if (spriteNeutral == null)
             spriteNeutral = currentSprite;
         spriteNeutral?.SetActive(false);
@@ -93,48 +97,45 @@ public class BodyPart : MonoBehaviour, ITargetable
 
     void ITargetable.TargetedByWater()
     {
-        OnEnterNewAilment(Ailment.wet);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByWater));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.water, ItemTextContext.usedOnBoss));
     }
 
     void ITargetable.TargetedByHolyWater()
     {
-        OnEnterNewAilment(Ailment.wet);
-        KillThisBodyPart();
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByHolyWater));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.holyWater, ItemTextContext.usedOnBoss));
     }
 
     void ITargetable.TargetedByMedusasEye()
     {
-        OnEnterNewAilment(Ailment.petrified);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByMedusasEye));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.medEye, ItemTextContext.usedOnBoss));
     }
 
     void ITargetable.TargetedByIceGem()
     {
-        OnEnterNewAilment(Ailment.frozen);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByIceGem));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.iceGem, ItemTextContext.usedOnBoss));
     }
 
     void ITargetable.TargetedByBandaid()
     {
-        OnEnterNewAilment(Ailment.banded);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByBandaid));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.bandaid, ItemTextContext.usedOnBoss));
     }
 
     void ITargetable.TargetedByStinger()
     {
-        // stinger should reduce the hp to 1 if the eye is the tarhget
-        OnEnterNewAilment(Ailment.blind);
-        if (isOpenEye)
-        {
-            AffectHealth(-enemy.currentHealth + 1);
-        }
-        else
-        {
-            AffectHealth(-30);
-        }
+
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByStinger));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.stinger, ItemTextContext.usedOnBoss));
     }
 
     void ITargetable.TargetedByBasicAttack()
     {
-        //if body part is eye -> it will deal the last 1 damage so please make sure we already have 1 hp
-        throw new System.NotImplementedException();
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByBasicAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.usedOnBoss));
     }
 
     public void AffectHealth(int _deltaHealth)
@@ -184,5 +185,65 @@ public class BodyPart : MonoBehaviour, ITargetable
     public void KillThisBodyPart()
     {
         AffectHealth(-1500);
+    }
+
+    public void AfterTargetedByWater()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.water, ItemTextContext.effectOnBoss));
+        OnEnterNewAilment(Ailment.wet);
+    }
+
+    public void AfterTargetedByHolyWater()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.holyWater, ItemTextContext.effectOnBoss));
+        OnEnterNewAilment(Ailment.wet);
+        KillThisBodyPart();
+    }
+
+    public void AfterTargetedByMedusasEye()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.medEye, ItemTextContext.effectOnBoss));
+        OnEnterNewAilment(Ailment.petrified);
+    }
+
+    public void AfterTargetedByIceGem()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.iceGem, ItemTextContext.effectOnBoss));
+        OnEnterNewAilment(Ailment.frozen);
+    }
+
+    public void AfterTargetedByBandaid()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.bandaid, ItemTextContext.effectOnBoss));
+        OnEnterNewAilment(Ailment.banded);
+    }
+
+    public void AfterTargetedByStinger()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.stinger, ItemTextContext.effectOnBoss));
+        // stinger should reduce the hp to 1 if the eye is the tarhget
+        OnEnterNewAilment(Ailment.blind);
+        if (isOpenEye)
+        {
+            AffectHealth(-enemy.currentHealth + 1);
+        }
+        else
+        {
+            AffectHealth(-30);
+        }
+    }
+
+    public void AfterTargetedByBasicAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.effectOnBoss));
+        //if body part is eye -> it will deal the last 1 damage so please make sure we already have 1 hp
+        throw new System.NotImplementedException();
     }
 }

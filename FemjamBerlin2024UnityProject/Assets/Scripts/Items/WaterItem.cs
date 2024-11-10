@@ -15,6 +15,7 @@ public class HolyWaterItem : BaseItem
     public override void OnUse(ITargetable _target)
     {
         GameManager.gameManager.hero.RemoveItem(Items.holyWater);
+        
         _target.TargetedByHolyWater();
         base.OnUse(_target);
     }

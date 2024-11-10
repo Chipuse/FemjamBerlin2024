@@ -35,7 +35,29 @@ public enum Items
     medEye,
     iceGem,
     bandaid,
-    stinger
+    stinger,
+    backPack
+}
+
+public enum ItemTextContext
+{
+    description,
+    usedOnPlayer,
+    effectOnPlayer,
+    usedOnBoss,
+    effectOnBoss,
+}
+
+public enum AttackTextContext
+{
+    whenCharging,
+    beforeAttack,
+    afterAttack,
+    whenFrozen,
+    whenPetrified,
+    whenBanded,
+    whenDead,
+    specialCase
 }
 
 static class GlobalVariables

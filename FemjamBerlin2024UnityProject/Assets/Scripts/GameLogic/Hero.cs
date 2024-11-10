@@ -56,13 +56,15 @@ public class Hero : MonoBehaviour, ITargetable
     public void OnAttackButton()
     {
         GameManager.gameManager.OpenCancelMenu();
+
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.description));
         GameManager.gameManager.chosenItem = null;
     }
 
     public void OnAttack(ITargetable _target)
     {
         // deal damage to target
-        _target.AffectHealth(-1500);
+        _target.AfterTargetedByBasicAttack();
     }
 
     public void OnUseItem(BaseItem item)
@@ -86,6 +88,8 @@ public class Hero : MonoBehaviour, ITargetable
 
     public void OnEnterNewAilment(Ailment _ailment)
     {
+        ailment = _ailment;
+
         if (spriteNeutral == null)
             spriteNeutral = currentSprite;
         spriteNeutral?.SetActive(false);
@@ -148,40 +152,48 @@ public class Hero : MonoBehaviour, ITargetable
 
     void ITargetable.TargetedByWater()
     {
-        OnEnterNewAilment(Ailment.wet);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByWater));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText( Items.water, ItemTextContext.usedOnPlayer));
+
+        //fill textbox
     }
 
     void ITargetable.TargetedByHolyWater()
     {
-        OnEnterNewAilment(Ailment.wet);
-        AffectHealth(100);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByHolyWater));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.holyWater, ItemTextContext.usedOnPlayer));
+
     }
 
     void ITargetable.TargetedByMedusasEye()
     {
-        OnEnterNewAilment(Ailment.petrified);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByMedusasEye));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.medEye, ItemTextContext.usedOnPlayer));
+
     }
 
     void ITargetable.TargetedByIceGem()
     {
-        OnEnterNewAilment(Ailment.frozen);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByIceGem));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.iceGem, ItemTextContext.usedOnPlayer));
     }
 
     void ITargetable.TargetedByBandaid()
     {
-        OnEnterNewAilment(Ailment.banded);
-        AffectHealth(10000);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByBandaid));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.bandaid, ItemTextContext.usedOnPlayer));
     }
 
     void ITargetable.TargetedByStinger()
     {
-        OnEnterNewAilment(Ailment.blind);
-        AffectHealth(-30);
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByStinger));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.stinger, ItemTextContext.usedOnPlayer));
     }
 
     void ITargetable.TargetedByBasicAttack()
     {
-        throw new System.NotImplementedException();
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByBasicAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.usedOnPlayer));
     }
 
     public void AffectHealth(int _deltaHealth)
@@ -232,4 +244,55 @@ public class Hero : MonoBehaviour, ITargetable
 
     }
 
+    public void AfterTargetedByWater()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.water, ItemTextContext.effectOnPlayer));
+        OnEnterNewAilment(Ailment.wet);
+    }
+
+    public void AfterTargetedByHolyWater()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.holyWater, ItemTextContext.effectOnPlayer));
+        OnEnterNewAilment(Ailment.wet);
+        AffectHealth(100);
+    }
+
+    public void AfterTargetedByMedusasEye()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.medEye, ItemTextContext.effectOnPlayer));
+        OnEnterNewAilment(Ailment.petrified);
+    }
+
+    public void AfterTargetedByIceGem()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.iceGem, ItemTextContext.effectOnPlayer));
+        OnEnterNewAilment(Ailment.frozen);
+    }
+
+    public void AfterTargetedByBandaid()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.bandaid, ItemTextContext.effectOnPlayer));
+        OnEnterNewAilment(Ailment.banded);
+        AffectHealth(10000);
+    }
+
+    public void AfterTargetedByStinger()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.stinger, ItemTextContext.effectOnPlayer));
+        OnEnterNewAilment(Ailment.blind);
+        AffectHealth(-30);
+    }
+
+    public void AfterTargetedByBasicAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.effectOnPlayer));
+        AffectHealth(-1);
+    }
 }
