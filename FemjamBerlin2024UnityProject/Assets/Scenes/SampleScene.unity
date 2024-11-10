@@ -1129,6 +1129,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98062748}
   m_CullTransparentMesh: 1
+--- !u!1 &129072609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129072611}
+  - component: {fileID: 129072610}
+  m_Layer: 0
+  m_Name: TextObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &129072610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129072609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833c1a836cd5a0d4fa64e61cf506aa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTexts:
+  - item: 0
+    context: 3
+    text: {fileID: 11400000, guid: b396576c509d2ac4c8e83da041d873c6, type: 2}
+  - item: 0
+    context: 4
+    text: {fileID: 11400000, guid: 984793d714b127246a2c35b541a0cb24, type: 2}
+  attackTexts:
+  - bodyPart: 2
+    context: 0
+    text: {fileID: 0}
+  textBox: {fileID: 515194721}
+--- !u!4 &129072611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129072609}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164614551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,6 +2823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfTarget: sillybean
   isOpenEye: 0
+  ailmentState: 0
   enemy: {fileID: 0}
   spriteNeutral: {fileID: 0}
   spritePetrified: {fileID: 0}
@@ -3101,6 +3158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfTarget: sillybean
   isOpenEye: 1
+  ailmentState: 0
   enemy: {fileID: 0}
   spriteNeutral: {fileID: 0}
   spritePetrified: {fileID: 0}
@@ -3163,6 +3221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfTarget: sillybean
   isOpenEye: 0
+  ailmentState: 0
   enemy: {fileID: 0}
   spriteNeutral: {fileID: 0}
   spritePetrified: {fileID: 0}
@@ -3816,6 +3875,7 @@ MonoBehaviour:
   SlotList: []
   cancelTargetMenu: {fileID: 277099629}
   nextMenu: {fileID: 571425462}
+  textBoxActive: 0
   inputMode: 0
   OnHeroDeathText: {fileID: 0}
 --- !u!4 &552027803
@@ -3937,7 +3997,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 552027802}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OpenBattleMenu
+        m_MethodName: OnNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6340,6 +6400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfTarget: sillybean
   isOpenEye: 0
+  ailmentState: 0
   enemy: {fileID: 0}
   spriteNeutral: {fileID: 0}
   spritePetrified: {fileID: 0}
@@ -8061,6 +8122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfTarget: sillybean
   isOpenEye: 0
+  ailmentState: 0
   enemy: {fileID: 0}
   spriteNeutral: {fileID: 0}
   spritePetrified: {fileID: 0}
@@ -14309,6 +14371,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 129072611}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1488209430}

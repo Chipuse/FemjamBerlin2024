@@ -101,21 +101,47 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void ChargeWingAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenCharging));
+    }
+
     void DoWingAttack()
     {
-        if(Wing.ailmentState == Ailment.banded)
-        {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterWingAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.beforeAttack));
+    }
 
+    public void AfterWingAttack()
+    {
+        if (Wing.ailmentState == Ailment.banded)
+        {
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.afterAttack));
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeMouthAttack));
         }
         else
         {
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.afterAttack));
             //Death
         }
     }
 
+    void ChargeMouthAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenCharging));
+    }
+
     void DoMouthAttack()
     {
-        if(GameManager.gameManager.hero.ailment == Ailment.frozen)
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterMouthAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.beforeAttack));
+    }
+
+    public void AfterMouthAttack()
+    {
+        if (GameManager.gameManager.hero.ailment == Ailment.frozen)
         {
 
         }
@@ -123,11 +149,26 @@ public class Enemy : MonoBehaviour
         {
             //death
         }
+
     }
+
+
+    void ChargeTailAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenCharging));
+    }
+
 
     void DoTailAttack()
     {
-        if(GameManager.gameManager.hero.ailment == Ailment.petrified)
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTailAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.beforeAttack));
+    }
+
+    public void AfterTailAttack()
+    {
+        if (GameManager.gameManager.hero.ailment == Ailment.petrified)
         {
             GameManager.gameManager.hero.inventory.Add(Items.stinger);
         }
@@ -135,9 +176,22 @@ public class Enemy : MonoBehaviour
         {
             //death
         }
+
+    }
+
+    void ChargeArmAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenCharging));
     }
 
     void DoArmAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterArmAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.beforeAttack));
+    }
+
+    public void AfterArmAttack()
     {
         if (GameManager.gameManager.hero.inventory.Contains(Items.holyWater))
         {
@@ -147,11 +201,25 @@ public class Enemy : MonoBehaviour
         {
             //Death
         }
+
     }
+
+    void ChargeEyeAttack()
+    {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
+    }
+
 
     void DoEyeAttack()
     {
-        if(Eye.ailmentState == Ailment.blind)
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterEyeAttack));
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.beforeAttack));
+    }
+
+    public void AfterEyeAttack()
+    {
+        if (Eye.ailmentState == Ailment.blind)
         {
             //stuned
         }
@@ -160,6 +228,7 @@ public class Enemy : MonoBehaviour
             //hero will get killed
 
         }
+
     }
 
 }

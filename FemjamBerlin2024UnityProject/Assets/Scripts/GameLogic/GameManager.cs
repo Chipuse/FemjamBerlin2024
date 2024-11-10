@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     }
 
     //BattleManagment
+
+    public ITargetable latestTarget;
 
     public Enemy enemy;
     public Hero hero;
@@ -92,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void OnTargetChosen(ITargetable _target)
     {
+        latestTarget = _target;
         if(chosenItem != null)
         {
             chosenItem.OnUse(_target);
@@ -125,13 +130,24 @@ public class GameManager : MonoBehaviour
         //ToDo Have to figure out how to navigate through events with animations and stuff....
 
 
-        if (onNextButtonQueue != null)
+        
+
+        textBoxActive = false;
+    }
+
+    public bool textBoxActive = false;
+    public IEnumerator TextBoxClickCallback(Action callbackFunc)
+    {
+        textBoxActive = true;
+        while (textBoxActive)
         {
-            onNextButtonQueue();
-            onNextButtonQueue = null;
+            yield return new WaitForEndOfFrame();
+        }
+        if(callbackFunc != null)
+        {
+            callbackFunc();
         }
     }
-    public SimpleGameEvent onNextButtonQueue;
 
     public Inputmode inputMode = Inputmode.menu;
 

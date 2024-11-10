@@ -10,6 +10,7 @@ public class ItemSlot : MonoBehaviour
     {
         GameManager.gameManager.OpenCancelMenu();
         GameManager.gameManager.chosenItem = item;
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(itemType, ItemTextContext.description));
     }
 
     public void OnEnable()
