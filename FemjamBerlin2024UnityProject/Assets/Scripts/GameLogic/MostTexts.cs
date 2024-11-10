@@ -29,7 +29,7 @@ public class MostTexts : MonoBehaviour
     }
     public void FillTextBox(TextboxText _text)
     {
-        textBox.text = _text.text;
+        textBox.text = _text.Parsed();
     }
 
     public string FindText(Items _item, ItemTextContext _context)
