@@ -31,6 +31,15 @@ public class GameManager : MonoBehaviour
     public GameObject cancelTargetMenu;
     public GameObject nextMenu;
 
+    public void OpenBattleMenu()
+    {
+        battleMenu.gameObject.SetActive(true);
+        cancelTargetMenu.gameObject.SetActive(false);
+        nextMenu.gameObject.SetActive(false);
+        itemMenu.gameObject.SetActive(false);
+        disableTargeting();
+    }
+
     public void OpenItemMenu()
     {
         battleMenu.gameObject.SetActive(false);
@@ -38,8 +47,9 @@ public class GameManager : MonoBehaviour
         nextMenu.gameObject.SetActive(false);
 
         itemMenu.gameObject.SetActive(true);
+        disableTargeting();
 
-        if(SlotList.Count <= 0)
+        if (SlotList.Count <= 0)
         {
             //fetch slotscripts
             foreach (var item in itemMenu.GetComponentsInChildren<ItemSlot>())
@@ -68,11 +78,17 @@ public class GameManager : MonoBehaviour
         nextMenu.gameObject.SetActive(false);
         itemMenu.gameObject.SetActive(false);
 
+        enableTargeting();
+
         if(chosenItem == null)
         {
             //basic attack was chosen
         }
     }
+
+    public delegate void SimpleGameEvent();
+    public SimpleGameEvent enableTargeting;
+    public SimpleGameEvent disableTargeting;
 
     public void OnTargetChosen(ITargetable _target)
     {
@@ -84,6 +100,23 @@ public class GameManager : MonoBehaviour
         {
             //basic attack of hero was selected
             hero.OnAttack(_target);
+        }
+        OpenNextMenu();
+        disableTargeting();
+    }
+
+    public void OpenNextMenu()
+    {
+        disableTargeting();
+        chosenItem = null;
+        battleMenu.gameObject.SetActive(false);
+        cancelTargetMenu.gameObject.SetActive(false);
+        nextMenu.gameObject.SetActive(true);
+        itemMenu.gameObject.SetActive(false);
+
+        if (chosenItem == null)
+        {
+            //basic attack was chosen
         }
     }
 

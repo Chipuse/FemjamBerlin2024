@@ -11,7 +11,7 @@ public class BaseItem
 
     }
     
-    public void OnUse(ITargetable _target)
+    public virtual void OnUse(ITargetable _target)
     {
         Debug.Log("Item was used on " + _target.INameOfTarget);
         GameManager.gameManager.chosenItem = null;

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,7 +10,10 @@ public class Enemy : MonoBehaviour
     public GameObject healthbar;
     public void UpdateHealthBar()
     {
-        healthbar.transform.localScale = new Vector3((float)currentHealth / (float)maxHealth, 1f, 1f);
+        float newScale = (float)currentHealth / (float)maxHealth;
+        if (newScale < 0)
+            newScale = 0;
+        healthbar.transform.localScale = new Vector3(newScale, 1f, 1f);
 
     }
 
@@ -20,11 +24,37 @@ public class Enemy : MonoBehaviour
     public GameObject arm;
     public GameObject eye;
 
+    public int bodyPartCount = 5;
+    public void CheckBodyParts()
+    {
+        StartCoroutine(CoroutineCheckBodyparts());
+    }
+    public IEnumerator CoroutineCheckBodyparts()
+    {
+        if(bodyPartCount == 1)
+        {
+            //eye opens!
+            eye.SetActive(true);
+            //health has to get to 31
+            while (currentHealth != 31)
+            {
+                yield return new WaitForEndOfFrame();
+                currentHealth--;
+                UpdateHealthBar();
+            }
+        }
+        else
+        {
+            //other text trigger
+        }
+    }
+
     public BodyPartEnum currentBodyPart = BodyPartEnum.wing;
 
     void Start()
     {
-        
+        eye.SetActive(false);
+        UpdateHealthBar();
     }
 
     void Update()

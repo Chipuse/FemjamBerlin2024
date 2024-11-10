@@ -8,6 +8,7 @@ public enum Ailment
     banded,
     petrified,
     frozen,
+    blind,
     dead
 }
 
@@ -39,5 +40,5 @@ public enum Items
 
 static class GlobalVariables
 {
-    public static float blinkTime = 0.01f;
+    public static float blinkTime = 0.05f;
 }

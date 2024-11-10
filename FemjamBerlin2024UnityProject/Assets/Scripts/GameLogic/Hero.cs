@@ -13,7 +13,10 @@ public class Hero : MonoBehaviour, ITargetable
     public GameObject healthbar;
     public void UpdateHealthBar()
     {
-        healthbar.transform.localScale = new Vector3( (float)currentHealth/(float)maxHealth, 1f, 1f);
+        float newScale = (float)currentHealth / (float)maxHealth;
+        if (newScale < 0)
+            newScale = 0;
+        healthbar.transform.localScale = new Vector3(newScale, 1f, 1f);
     }
 
     //inventory
@@ -24,6 +27,8 @@ public class Hero : MonoBehaviour, ITargetable
         inventory.Add(Items.water);
         inventory.Add(Items.medEye);
         inventory.Add(Items.iceGem);
+        inventory.Add(Items.stinger);
+        UpdateHealthBar();
     }
 
     void Update()
@@ -45,7 +50,7 @@ public class Hero : MonoBehaviour, ITargetable
     public void OnAttack(ITargetable _target)
     {
         // deal damage to target
-        _target.AffectHealth(-1);
+        _target.AffectHealth(-1500);
     }
 
     public void OnUseItem(BaseItem item)
@@ -60,6 +65,7 @@ public class Hero : MonoBehaviour, ITargetable
     public GameObject spriteBanded;
     public GameObject spriteDamaged;
     public GameObject spriteDead;
+    public GameObject spriteBlind;
     public GameObject currentSprite;
     //potentially more stuff???
 
@@ -68,39 +74,60 @@ public class Hero : MonoBehaviour, ITargetable
 
     public void OnEnterNewAilment(Ailment _ailment)
     {
-        spriteNeutral.SetActive(false);
-        spritePetrified.SetActive(false);
-        spriteWet.SetActive(false);
-        spriteFrozen.SetActive(false);
-        spriteBanded.SetActive(false);
-        spriteDamaged.SetActive(false);
-        spriteDead.SetActive(false);
+        if (spriteNeutral == null)
+            spriteNeutral = currentSprite;
+        spriteNeutral?.SetActive(false);
+        if (spritePetrified == null)
+            spritePetrified = currentSprite;
+        spritePetrified?.SetActive(false);
+        if (spriteWet == null)
+            spriteWet = currentSprite;
+        spriteWet?.SetActive(false);
+        if (spriteFrozen == null)
+            spriteFrozen = currentSprite;
+        spriteFrozen?.SetActive(false);
+        if (spriteBanded == null)
+            spriteBanded = currentSprite;
+        spriteBanded?.SetActive(false);
+        if (spriteDamaged == null)
+            spriteDamaged = currentSprite;
+        spriteDamaged?.SetActive(false);
+        if (spriteDead == null)
+            spriteDead = currentSprite;
+        spriteDead?.SetActive(false);
+        if (spriteBlind == null)
+            spriteBlind = currentSprite;
+        spriteBlind?.SetActive(false);
         //activate vfx?
         switch (_ailment)
         {
             case Ailment.neutral:
-                spriteNeutral.SetActive(true);
+                spriteNeutral?.SetActive(true);
                 currentSprite = spriteNeutral;
                 break;
             case Ailment.wet:
-                spriteWet.SetActive(true);
+                spriteWet?.SetActive(true);
                 currentSprite = spriteWet;
                 break;
             case Ailment.banded:
-                spriteBanded.SetActive(true);
+                spriteBanded?.SetActive(true);
                 currentSprite = spriteBanded;
                 break;
             case Ailment.petrified:
-                spritePetrified.SetActive(true);
+                spritePetrified?.SetActive(true);
                 currentSprite = spritePetrified;
                 break;
             case Ailment.frozen:
-                spriteFrozen.SetActive(true);
+                spriteFrozen?.SetActive(true);
                 currentSprite = spriteFrozen;
                 break;
             case Ailment.dead:
-                spriteDead.SetActive(true);
+                spriteDead?.SetActive(true);
                 currentSprite = spriteDead;
+                break;
+            case Ailment.blind:
+                spriteBlind?.SetActive(true);
+                currentSprite = spriteBlind;
                 break;
             default:
                 break;
@@ -109,32 +136,35 @@ public class Hero : MonoBehaviour, ITargetable
 
     void ITargetable.TargetedByWater()
     {
-        throw new System.NotImplementedException();
+        OnEnterNewAilment(Ailment.wet);
     }
 
     void ITargetable.TargetedByHolyWater()
     {
-        throw new System.NotImplementedException();
+        OnEnterNewAilment(Ailment.wet);
+        AffectHealth(100);
     }
 
     void ITargetable.TargetedByMedusasEye()
     {
-        throw new System.NotImplementedException();
+        OnEnterNewAilment(Ailment.petrified);
     }
 
     void ITargetable.TargetedByIceGem()
     {
-        throw new System.NotImplementedException();
+        OnEnterNewAilment(Ailment.frozen);
     }
 
     void ITargetable.TargetedByBandaid()
     {
-        throw new System.NotImplementedException();
+        OnEnterNewAilment(Ailment.banded);
+        AffectHealth(10000);
     }
 
     void ITargetable.TargetedByStinger()
     {
-        throw new System.NotImplementedException();
+        OnEnterNewAilment(Ailment.blind);
+        AffectHealth(-30);
     }
 
     void ITargetable.TargetedByBasicAttack()
@@ -142,21 +172,30 @@ public class Hero : MonoBehaviour, ITargetable
         throw new System.NotImplementedException();
     }
 
-    void ITargetable.AffectHealth(int _deltaHealth)
+    public void AffectHealth(int _deltaHealth)
     {
-        StartCoroutine(AffectHealthCoroutine(_deltaHealth));        
+        int deltaHealth = _deltaHealth;
+
+        if(deltaHealth + currentHealth > maxHealth) 
+        {
+            deltaHealth = maxHealth - currentHealth;
+        }
+        StartCoroutine(AffectHealthCoroutine(deltaHealth));        
     }
 
     private IEnumerator AffectHealthCoroutine(int _deltaHealth)
     {
         if(_deltaHealth < 0)
         {
-            for (int i = 0; i < 10; i++)
+            if(currentSprite != null)
             {
-                currentSprite.SetActive(false);
-                yield return new WaitForSeconds(GlobalVariables.blinkTime);
-                currentSprite.SetActive(true);
-                yield return new WaitForSeconds(GlobalVariables.blinkTime);
+                for (int i = 0; i < 5; i++)
+                {
+                    currentSprite.SetActive(false);
+                    yield return new WaitForSeconds(GlobalVariables.blinkTime);
+                    currentSprite.SetActive(true);
+                    yield return new WaitForSeconds(GlobalVariables.blinkTime);
+                }
             }
         }
         else
@@ -171,8 +210,8 @@ public class Hero : MonoBehaviour, ITargetable
                 currentHealth--;
             else
                 currentHealth++;
+            UpdateHealthBar();
         }
-        UpdateHealthBar();
 
         if (currentHealth <= 0)
         {
