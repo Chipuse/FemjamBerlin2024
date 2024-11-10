@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 561bc85f1ac30af47beebd18896ebf61
+guid: 944ceebffb9a7254bb127e8c636c230d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,95 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4217bf941758a6b45bccac72c3efe487
-      internalID: 1614859384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8001934cc1803043875be6eb7111cbb
-      internalID: -1765469073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_2
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58ad6a96957c9e04e864a94268974e39
-      internalID: -128929352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_3
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efcfcfab1abd81146ba5ee5901083f04
-      internalID: -1508150695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_4
+      name: Flipbook_Daze_R4XL3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 497d23d7075444643a0d8a38c6b7b1dc
-      internalID: -472274697
+      spriteID: e241e6c0ac46fef43afe93b7cb921492
+      internalID: -1265315777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_5
+      name: Flipbook_Daze_R4XL3_1
       rect:
         serializedVersion: 2
         x: 512
@@ -235,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3aa58698e288d4ea08bab2b66d602c
-      internalID: 1913923428
+      spriteID: 71b00064901bcda48938a82ee0b46593
+      internalID: -872684748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_6
+      name: Flipbook_Daze_R4XL3_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -257,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0613aa1c64b2901429d6d676becc6638
-      internalID: 1548468263
+      spriteID: 527910741ef17124fb3d7e313fcc4c31
+      internalID: -363236544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_7
+      name: Flipbook_Daze_R4XL3_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -279,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f505fd951f4934e999f46dc9bc9b75
-      internalID: -85332712
+      spriteID: e089dc120505e504bb13b7978b60f0f1
+      internalID: -1223157207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_8
+      name: Flipbook_Daze_R4XL3_4
       rect:
         serializedVersion: 2
         x: 0
@@ -301,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d6d8b2c4676e4f4a8d795a958779012
-      internalID: 878436966
+      spriteID: d2ba42bf8687b2f42b56e42708c64b5f
+      internalID: 603131027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_9
+      name: Flipbook_Daze_R4XL3_5
       rect:
         serializedVersion: 2
         x: 512
@@ -323,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 314433d44ba3eb948ac59e4802c56115
-      internalID: 1938919971
+      spriteID: 74964fe7aeeb1ef4bb0927908755b83a
+      internalID: 1058642486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_10
+      name: Flipbook_Daze_R4XL3_6
       rect:
         serializedVersion: 2
         x: 1024
@@ -345,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2acaa10aa2523c442bb919cc8ae4a05b
-      internalID: -792325550
+      spriteID: 1e5682ca5133e2e42ad94128214a3f73
+      internalID: -1917391648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_11
+      name: Flipbook_Daze_R4XL3_7
       rect:
         serializedVersion: 2
         x: 1536
@@ -367,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5496cdcddbc1ed4b89e622e8b60e717
-      internalID: -1405758074
+      spriteID: efd8a0d7809fe894da049b1bf30c1c9c
+      internalID: -1766596160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_12
+      name: Flipbook_Daze_R4XL3_8
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27859a61a5b805341bc59196120cc4d5
-      internalID: 1386991308
+      spriteID: 2b98fa26a51e5f94b8e921aa0008b078
+      internalID: 676266591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_13
+      name: Flipbook_Daze_R4XL3_9
       rect:
         serializedVersion: 2
         x: 512
@@ -411,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c74becc54227ec44a3fb720a3a49d68
-      internalID: 1990728382
+      spriteID: 35d48c2f77df6bb418eb9ec12a2e079b
+      internalID: -1059014289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_14
+      name: Flipbook_Daze_R4XL3_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -433,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff58641eecee3bb40ac4b55016eda5f9
-      internalID: 2012203908
+      spriteID: 81e8265a4386c8d4eb493cee3f94706e
+      internalID: 1691878473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flipbook_HolyWaterdrops_R4XL4_15
+      name: Flipbook_Daze_R4XL3_11
       rect:
         serializedVersion: 2
         x: 1536
@@ -455,8 +367,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6e27c6e0c11da2498aea80f10a72c8c
-      internalID: 1649509056
+      spriteID: 99455762053b4a1429e476987a2e6c13
+      internalID: 719751680
       vertices: []
       indices: 
       edges: []
@@ -465,7 +377,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7d467ef18b17ac1469ca0f5fad1255a9
+    spriteID: 35f1e37e7d4414c4abc42792b392d731
     internalID: 0
     vertices: []
     indices: 
@@ -475,22 +387,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flipbook_HolyWaterdrops_R4XL4_0: 1614859384
-      Flipbook_HolyWaterdrops_R4XL4_1: -1765469073
-      Flipbook_HolyWaterdrops_R4XL4_10: -792325550
-      Flipbook_HolyWaterdrops_R4XL4_11: -1405758074
-      Flipbook_HolyWaterdrops_R4XL4_12: 1386991308
-      Flipbook_HolyWaterdrops_R4XL4_13: 1990728382
-      Flipbook_HolyWaterdrops_R4XL4_14: 2012203908
-      Flipbook_HolyWaterdrops_R4XL4_15: 1649509056
-      Flipbook_HolyWaterdrops_R4XL4_2: -128929352
-      Flipbook_HolyWaterdrops_R4XL4_3: -1508150695
-      Flipbook_HolyWaterdrops_R4XL4_4: -472274697
-      Flipbook_HolyWaterdrops_R4XL4_5: 1913923428
-      Flipbook_HolyWaterdrops_R4XL4_6: 1548468263
-      Flipbook_HolyWaterdrops_R4XL4_7: -85332712
-      Flipbook_HolyWaterdrops_R4XL4_8: 878436966
-      Flipbook_HolyWaterdrops_R4XL4_9: 1938919971
+      Flipbook_Daze_R4XL3_0: -1265315777
+      Flipbook_Daze_R4XL3_1: -872684748
+      Flipbook_Daze_R4XL3_10: 1691878473
+      Flipbook_Daze_R4XL3_11: 719751680
+      Flipbook_Daze_R4XL3_2: -363236544
+      Flipbook_Daze_R4XL3_3: -1223157207
+      Flipbook_Daze_R4XL3_4: 603131027
+      Flipbook_Daze_R4XL3_5: 1058642486
+      Flipbook_Daze_R4XL3_6: -1917391648
+      Flipbook_Daze_R4XL3_7: -1766596160
+      Flipbook_Daze_R4XL3_8: 676266591
+      Flipbook_Daze_R4XL3_9: -1059014289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
