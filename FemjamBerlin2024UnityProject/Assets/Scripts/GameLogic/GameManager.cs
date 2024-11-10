@@ -120,6 +120,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void OnNextButton()
+    {
+        //ToDo Have to figure out how to navigate through events with animations and stuff....
+
+
+        if (onNextButtonQueue != null)
+        {
+            onNextButtonQueue();
+            onNextButtonQueue = null;
+        }
+    }
+    public SimpleGameEvent onNextButtonQueue;
 
     public Inputmode inputMode = Inputmode.menu;
 

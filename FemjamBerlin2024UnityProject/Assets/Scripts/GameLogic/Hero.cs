@@ -86,6 +86,8 @@ public class Hero : MonoBehaviour, ITargetable
 
     public void OnEnterNewAilment(Ailment _ailment)
     {
+        ailment = _ailment;
+
         if (spriteNeutral == null)
             spriteNeutral = currentSprite;
         spriteNeutral?.SetActive(false);

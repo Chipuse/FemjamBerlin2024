@@ -19,10 +19,15 @@ public class Enemy : MonoBehaviour
 
 
     public GameObject wing;
+    private BodyPart Wing;
     public GameObject mouth;
+    private BodyPart Mouth;
     public GameObject tail;
+    private BodyPart Tail;
     public GameObject arm;
+    private BodyPart Arm;
     public GameObject eye;
+    private BodyPart Eye;
 
     public int bodyPartCount = 5;
     public void CheckBodyParts()
@@ -55,6 +60,11 @@ public class Enemy : MonoBehaviour
     {
         eye.SetActive(false);
         UpdateHealthBar();
+        Wing = wing.GetComponent<BodyPart>();
+        Mouth = mouth.GetComponent<BodyPart>();
+        Tail = tail.GetComponent<BodyPart>();
+        Arm = arm.GetComponent<BodyPart>();
+        Eye = eye.GetComponent<BodyPart>();
     }
 
     void Update()
@@ -66,16 +76,19 @@ public class Enemy : MonoBehaviour
         switch (currentBodyPart)
         {
             case BodyPartEnum.wing:
-
+                DoWingAttack();
                 break;
             case BodyPartEnum.mouth:
+                DoMouthAttack();
                 break;
             case BodyPartEnum.tail:
+                DoTailAttack();
                 break;
             case BodyPartEnum.arm:
+                DoArmAttack();
                 break;
             case BodyPartEnum.eye:
-                
+                DoEyeAttack();
                 currentBodyPart--;
                 //new flag for open eye
                 break;
@@ -86,6 +99,67 @@ public class Enemy : MonoBehaviour
         currentBodyPart++;
         //check if all body parts dead, if not set back to = wing; else set to eye
 
+    }
+
+    void DoWingAttack()
+    {
+        if(Wing.ailmentState == Ailment.banded)
+        {
+
+        }
+        else
+        {
+            //Death
+        }
+    }
+
+    void DoMouthAttack()
+    {
+        if(GameManager.gameManager.hero.ailment == Ailment.frozen)
+        {
+
+        }
+        else
+        {
+            //death
+        }
+    }
+
+    void DoTailAttack()
+    {
+        if(GameManager.gameManager.hero.ailment == Ailment.petrified)
+        {
+            GameManager.gameManager.hero.inventory.Add(Items.stinger);
+        }
+        else
+        {
+            //death
+        }
+    }
+
+    void DoArmAttack()
+    {
+        if (GameManager.gameManager.hero.inventory.Contains(Items.holyWater))
+        {
+
+        }
+        else
+        {
+            //Death
+        }
+    }
+
+    void DoEyeAttack()
+    {
+        if(Eye.ailmentState == Ailment.blind)
+        {
+            //stuned
+        }
+        else
+        {
+            //hero will get killed
+
+        }
     }
 
 }

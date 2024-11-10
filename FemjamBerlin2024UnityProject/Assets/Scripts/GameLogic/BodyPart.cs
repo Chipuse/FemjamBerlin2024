@@ -7,6 +7,8 @@ public class BodyPart : MonoBehaviour, ITargetable
     public bool isOpenEye = false;
     public string INameOfTarget { get { return NameOfTarget; } set { NameOfTarget = INameOfTarget; } }
 
+    public Ailment ailmentState = Ailment.neutral;
+
     public Enemy enemy;
 
     public GameObject spriteNeutral;
@@ -31,6 +33,8 @@ public class BodyPart : MonoBehaviour, ITargetable
 
     public void OnEnterNewAilment(Ailment _ailment)
     {
+        ailmentState = _ailment;
+
         if (spriteNeutral == null)
             spriteNeutral = currentSprite;
         spriteNeutral?.SetActive(false);

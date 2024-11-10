@@ -3846,12 +3846,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548af616c59189d4681cb6f8ea6cd82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterItem: {fileID: 0}
-  holyWaterItem: {fileID: 0}
-  medEyeItem: {fileID: 0}
-  iceGemItem: {fileID: 0}
-  bandaidItem: {fileID: 0}
-  stingerItem: {fileID: 0}
+  waterItem: {fileID: 21300000, guid: ef888bcecc27b634b8870690739a245b, type: 3}
+  holyWaterItem: {fileID: 21300000, guid: bbd560c37e4a3374d87f2c038ad2e842, type: 3}
+  medEyeItem: {fileID: 21300000, guid: d6d3026a97482794c949b04c80ce7bcd, type: 3}
+  iceGemItem: {fileID: 21300000, guid: eff6ce50ec53c28469bc14bdc44c177d, type: 3}
+  bandaidItem: {fileID: 21300000, guid: 148fbb93a0b675345bb7b73841da73b7, type: 3}
+  stingerItem: {fileID: 21300000, guid: 9bc1cbcf82325e94fa0856d0707548ae, type: 3}
 --- !u!1 &571425462
 GameObject:
   m_ObjectHideFlags: 0
