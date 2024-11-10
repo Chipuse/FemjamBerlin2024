@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public ITargetable latestTarget;
 
+    public ITargetable latestAttacker;
+
     public Enemy enemy;
     public Hero hero;
 
