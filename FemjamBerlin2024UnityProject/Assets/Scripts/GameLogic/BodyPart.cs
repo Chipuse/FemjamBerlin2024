@@ -166,10 +166,9 @@ public class BodyPart : MonoBehaviour, ITargetable
                 enemy.currentHealth++;
             enemy.UpdateHealthBar();
         }
-        if(_deltaHealth < -1000)
+        if(_deltaHealth < -1000 && enemy.bodyPartCount > 1)
         {
             enemy.bodyPartCount--;
-            enemy.CheckBodyParts();
             for (int i = 0; i < 10; i++)
             {
                 currentSprite.SetActive(false);
@@ -178,7 +177,21 @@ public class BodyPart : MonoBehaviour, ITargetable
                 yield return new WaitForSeconds(GlobalVariables.blinkTime);
             }
             transform.gameObject.SetActive(false);
+            enemy.CheckBodyParts();
             //boom
+        }
+        if(enemy.currentHealth <= 0)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                currentSprite.SetActive(false);
+                yield return new WaitForSeconds(GlobalVariables.blinkTime);
+                currentSprite.SetActive(true);
+                yield return new WaitForSeconds(GlobalVariables.blinkTime);
+            }
+            currentSprite.SetActive(false);
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.WinGame));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenDead));
         }
     }
 
@@ -196,10 +209,10 @@ public class BodyPart : MonoBehaviour, ITargetable
 
     public void AfterTargetedByHolyWater()
     {
+        KillThisBodyPart();
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.holyWater, ItemTextContext.effectOnBoss));
         OnEnterNewAilment(Ailment.wet);
-        KillThisBodyPart();
     }
 
     public void AfterTargetedByMedusasEye()
@@ -231,7 +244,7 @@ public class BodyPart : MonoBehaviour, ITargetable
         OnEnterNewAilment(Ailment.blind);
         if (isOpenEye)
         {
-            AffectHealth(-enemy.currentHealth + 1);
+            AffectHealth(-enemy.currentHealth + 10);
         }
         else
         {
@@ -241,9 +254,9 @@ public class BodyPart : MonoBehaviour, ITargetable
 
     public void AfterTargetedByBasicAttack()
     {
+        AffectHealth(-10);
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.effectOnBoss));
         //if body part is eye -> it will deal the last 1 damage so please make sure we already have 1 hp
-        throw new System.NotImplementedException();
     }
 }
