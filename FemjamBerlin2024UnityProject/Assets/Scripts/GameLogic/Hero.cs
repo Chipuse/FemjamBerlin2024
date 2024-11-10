@@ -8,6 +8,10 @@ public class Hero : MonoBehaviour, ITargetable
     public int currentHealth = 100;
     public Ailment ailment = Ailment.neutral;
 
+
+    public bool holyWet = false;
+    public TextboxText prayText;
+
     public TextboxText OnAttackText;
 
     public GameObject healthbar;
@@ -27,7 +31,7 @@ public class Hero : MonoBehaviour, ITargetable
         inventory.Add(Items.water);
         inventory.Add(Items.medEye);
         inventory.Add(Items.iceGem);
-        inventory.Add(Items.holyWater);
+        inventory.Add(Items.bandaid);
         UpdateHealthBar();
     }
 
@@ -51,6 +55,23 @@ public class Hero : MonoBehaviour, ITargetable
     public void OnPray()
     {
         //Heal some damage, turn water into holy water
+        AffectHealth(10);
+        if (ailment == Ailment.wet)
+            holyWet = true;
+        foreach (var item in inventory)
+        {
+            if(item == Items.water)
+            {
+                inventory.Remove(Items.water);
+                inventory.Add(Items.holyWater);
+                break;
+            }
+        }
+        if(prayText != null)
+        {
+            MostTexts.mostTexts.FillTextBox(prayText);
+        }
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
     }
 
     public void OnAttackButton()
@@ -293,6 +314,6 @@ public class Hero : MonoBehaviour, ITargetable
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.effectOnPlayer));
-        AffectHealth(-1);
+        AffectHealth(-10);
     }
 }
