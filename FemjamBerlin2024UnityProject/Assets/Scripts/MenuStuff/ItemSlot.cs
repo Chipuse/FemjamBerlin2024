@@ -1,15 +1,46 @@
 using UnityEngine;
-public class ItemSlot : UnityEngine.UI.Button
+using UnityEngine.UI;
+public class ItemSlot : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Items itemType;
+    public BaseItem item;
+    public Image image;
+
+    public void OnItemUsed()
     {
-        
+        GameManager.gameManager.OpenCancelMenu();
+        GameManager.gameManager.chosenItem = item;
+        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(itemType, ItemTextContext.description));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnEnable()
     {
-        
+        //Set Images and Set 
+        switch (itemType)
+        {
+            case Items.water:
+                item = new WaterItem();
+                break;
+            case Items.holyWater:
+                item = new HolyWaterItem();
+                break;
+            case Items.medEye:
+                item = new MedEyeItem();
+                break;
+            case Items.iceGem:
+                item = new IceGemItem();
+                break;
+            case Items.bandaid:
+                item = new BandaidItem();
+                break;
+            case Items.stinger:
+                item = new StingerItem();
+                break;
+            default:
+                break;
+        }
+        if (image == null)
+            image = GetComponent<Image>();
+        image.sprite = SpriteReferencer.spriteReferencer.ItemSpriteDict[itemType];
     }
 }
