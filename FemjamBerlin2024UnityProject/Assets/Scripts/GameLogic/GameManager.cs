@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     //BattleManagment
 
     public ITargetable latestTarget;
@@ -33,7 +35,8 @@ public class GameManager : MonoBehaviour
 
 
     //Menumanagement
-
+    
+    public TMP_Text textBoxBox;
     public GameObject battleMenu;
     public GameObject itemMenu;
     public List<ItemSlot> SlotList = new List<ItemSlot>();
@@ -184,7 +187,7 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(2);
 
         Debug.Log("Hero won");
     }

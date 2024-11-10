@@ -26,7 +26,11 @@ public class MostTexts : MonoBehaviour
 
     public void FillTextBox(string _text)
     {
-        textBox.text = _text;
+        if(textBox == null)
+        {
+            textBox = GameManager.gameManager.textBoxBox;
+        }
+        textBox.text = TextboxText.ParsedStatic(_text);
     }
     public void FillTextBox(TextboxText _text)
     {

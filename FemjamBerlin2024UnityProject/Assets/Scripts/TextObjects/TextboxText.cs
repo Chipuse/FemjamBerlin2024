@@ -34,4 +34,27 @@ return _input;
         return resultString;
     }
 
+    public static string ParsedStatic(string _text)
+    {
+        char[] separators = { '{', '}' };
+        string[] strValues = _text.Split(separators);
+        string resultString = "";
+
+        foreach (string str in strValues)
+        {
+            if (str == "TARGET")
+            {
+                resultString += GameManager.gameManager.latestTarget.INameOfTarget;
+            }
+            else if (str == "ATTACKER")
+            {
+                resultString += GameManager.gameManager.latestAttacker.INameOfTarget;
+            }
+            else
+            {
+                resultString += str;
+            }
+        }
+        return resultString;
+    }
 }
