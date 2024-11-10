@@ -57,7 +57,8 @@ public enum AttackTextContext
     whenPetrified,
     whenBanded,
     whenDead,
-    specialCase
+    specialCase,
+    eyeJustOpened
 }
 
 static class GlobalVariables

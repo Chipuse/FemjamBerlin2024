@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
 
     public void OpenBattleMenu()
     {
+        if(hero.ailment == Ailment.frozen || hero.ailment == Ailment.petrified)
+        {
+            hero.OnEnterNewAilment(Ailment.neutral);
+        }
+        enemy.CheckAilments();
+
         battleMenu.gameObject.SetActive(true);
         cancelTargetMenu.gameObject.SetActive(false);
         nextMenu.gameObject.SetActive(false);
@@ -138,6 +144,7 @@ public class GameManager : MonoBehaviour
     public bool textBoxActive = false;
     public IEnumerator TextBoxClickCallback(Action callbackFunc)
     {
+        OpenNextMenu();
         textBoxActive = true;
         while (textBoxActive)
         {
@@ -160,7 +167,18 @@ public class GameManager : MonoBehaviour
     public TextboxText OnHeroDeathText;
     public void OnHeroDeath()
     {
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(RestartGame));
         //display Herodeath Text and potential to reload "savestate"/scene
+    }
+
+    public void RestartGame()
+    {
+
         Debug.Log("Hero died");
+    }
+
+    public void WinGame()
+    {
+        Debug.Log("Hero won");
     }
 }
