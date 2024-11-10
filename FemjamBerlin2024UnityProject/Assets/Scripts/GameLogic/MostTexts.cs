@@ -15,6 +15,7 @@ public class MostTexts : MonoBehaviour
         {
             Destroy(this);
         }
+        DontDestroyOnLoad(this);
     }
 
     public itemText[] itemTexts;
