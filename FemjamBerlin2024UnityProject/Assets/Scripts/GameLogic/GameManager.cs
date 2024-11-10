@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -175,12 +178,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-
+        SceneManager.LoadScene(0);
         Debug.Log("Hero died");
     }
 
     public void WinGame()
     {
+                SceneManager.LoadScene(0);
+
         Debug.Log("Hero won");
     }
 }
