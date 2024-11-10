@@ -37,7 +37,7 @@ public class MostTexts : MonoBehaviour
         for (int i = 0; i < itemTexts.Length; i++)
         {
             if (itemTexts[i].item == _item && itemTexts[i].context == _context)
-                return itemTexts[i].text.text;
+                return itemTexts[i].text.Parsed();
         }
 
         return "placeholder";
@@ -48,7 +48,7 @@ public class MostTexts : MonoBehaviour
         for (int i = 0; i < attackTexts.Length; i++)
         {
             if (attackTexts[i].bodyPart == _bodyPart && attackTexts[i].context == _context)
-                return itemTexts[i].text.text;
+                return itemTexts[i].text.Parsed();
         }
 
         return "placeholder";
