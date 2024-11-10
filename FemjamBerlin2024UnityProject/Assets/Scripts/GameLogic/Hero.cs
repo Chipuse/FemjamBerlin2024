@@ -250,7 +250,7 @@ public class Hero : MonoBehaviour, ITargetable
         int targetHealth = currentHealth + _deltaHealth;
         while(currentHealth != targetHealth)
         {
-            yield return new WaitForEndOfFrame();
+            //yield return new WaitForEndOfFrame();
             if (_deltaHealth < 0)
                 currentHealth--;
             else
