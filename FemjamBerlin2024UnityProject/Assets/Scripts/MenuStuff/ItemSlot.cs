@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour
 {
     public Items itemType;
     public BaseItem item;
+    public Image image;
 
     public void OnItemUsed()
     {
@@ -36,5 +38,8 @@ public class ItemSlot : MonoBehaviour
             default:
                 break;
         }
+        if (image == null)
+            image = GetComponent<Image>();
+        image.sprite = SpriteReferencer.spriteReferencer.ItemSpriteDict[itemType];
     }
 }

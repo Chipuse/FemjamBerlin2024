@@ -27,8 +27,20 @@ public class Hero : MonoBehaviour, ITargetable
         inventory.Add(Items.water);
         inventory.Add(Items.medEye);
         inventory.Add(Items.iceGem);
-        inventory.Add(Items.stinger);
+        inventory.Add(Items.holyWater);
         UpdateHealthBar();
+    }
+
+    public void RemoveItem(Items _item)
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if(inventory[i] == _item)
+            {
+                inventory.RemoveAt(i);
+                break;
+            }
+        }
     }
 
     void Update()

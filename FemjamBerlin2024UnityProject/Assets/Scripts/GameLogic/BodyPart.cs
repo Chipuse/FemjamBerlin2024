@@ -99,7 +99,7 @@ public class BodyPart : MonoBehaviour, ITargetable
     void ITargetable.TargetedByHolyWater()
     {
         OnEnterNewAilment(Ailment.wet);
-        //ToDO kill the body part
+        KillThisBodyPart();
     }
 
     void ITargetable.TargetedByMedusasEye()

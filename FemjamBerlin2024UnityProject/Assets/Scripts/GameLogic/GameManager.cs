@@ -59,13 +59,13 @@ public class GameManager : MonoBehaviour
         }
         for (int i = 0; i < SlotList.Count; i++)
         {
+
+            SlotList[i].gameObject.SetActive(false);
             if (i < hero.inventory.Count)
             {
+                SlotList[i].itemType = hero.inventory[i];
                 SlotList[i].gameObject.SetActive(true);
-                SlotList[i]. itemType = hero.inventory[i];
             }
-            else
-                SlotList[i].gameObject.SetActive(false);
         }
     }
 
