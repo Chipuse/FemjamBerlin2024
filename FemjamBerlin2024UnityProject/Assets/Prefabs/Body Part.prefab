@@ -54,14 +54,28 @@ MonoBehaviour:
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
-  spriteNeutral: {fileID: 0}
-  spritePetrified: {fileID: 0}
-  spriteWet: {fileID: 0}
-  spriteFrozen: {fileID: 0}
-  spriteBanded: {fileID: 0}
-  spriteDamaged: {fileID: 0}
-  spriteDead: {fileID: 0}
-  spriteBlind: {fileID: 0}
+  spriteList:
+  - ailment: 0
+    sprite: {fileID: 0}
+  - ailment: 1
+    sprite: {fileID: 0}
+  - ailment: 2
+    sprite: {fileID: 0}
+  - ailment: 3
+    sprite: {fileID: 0}
+  - ailment: 4
+    sprite: {fileID: 0}
+  - ailment: 6
+    sprite: {fileID: 0}
+  chargingText: 
+  beforeAttackText: 
+  afterAttackText: 
+  isFrozenText: '[The {ATTACKER} is frozen in ice and unable to attack.]'
+  isPetrifiedText: '[The {ATTACKER} is petrified and unable to attack.]'
+  isBandedText: '[The {ATTACKER} is wrapped up in bandages and unable to attack.]'
+  isDeadText: '[The {ATTACKER} is defeated and unable to attack.]'
+  attacksPetrifiedText: '[Your rock hard skin protects you from most damage. You
+    still take 1 damage and your body breaks free from the curse.]'
   currentSprite: {fileID: 7126423667380640694}
 --- !u!1 &3042300741764152315
 GameObject:
@@ -404,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

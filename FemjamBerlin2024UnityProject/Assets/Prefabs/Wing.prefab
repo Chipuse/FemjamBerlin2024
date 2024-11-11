@@ -112,6 +112,26 @@ PrefabInstance:
       propertyPath: NameOfTarget
       value: Wing
       objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -1468748831, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 817873152, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 642156304, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 2097173957, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: -977212364, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

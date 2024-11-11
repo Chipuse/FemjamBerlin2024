@@ -108,6 +108,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 8758524231284012726, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: -2496821670673441181, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 6728458466719791709, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: -1703434474865789833, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: -925134219673022747, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

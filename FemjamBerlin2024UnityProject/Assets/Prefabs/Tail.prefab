@@ -108,6 +108,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -1680543079, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 342296901, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 794541975, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: -2018448917, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: -1644661642, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
