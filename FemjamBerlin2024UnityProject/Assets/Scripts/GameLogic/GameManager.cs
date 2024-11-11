@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(gameManager == null || gameManager != this)
+        if (gameManager == null || gameManager != this)
         {
             gameManager = this;
         }
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
 
     //Menumanagement
-    
+
     public TMP_Text textBoxBox;
     public GameObject battleMenu;
     public GameObject itemMenu;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenBattleMenu()
     {
-        if(hero.ailment == Ailment.frozen || hero.ailment == Ailment.petrified)
+        if (hero.ailment == Ailment.frozen || hero.ailment == Ailment.petrified)
         {
             hero.OnEnterNewAilment(Ailment.neutral);
         }
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
         enableTargeting();
 
-        if(chosenItem == null)
+        if (chosenItem == null)
         {
             //basic attack was chosen
         }
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void OnTargetChosen(ITargetable _target)
     {
         latestTarget = _target;
-        if(chosenItem != null)
+        if (chosenItem != null)
         {
             chosenItem.OnUse(_target);
         }
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
         //ToDo Have to figure out how to navigate through events with animations and stuff....
 
 
-        
+
 
         textBoxActive = false;
     }
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForEndOfFrame();
         }
-        if(callbackFunc != null)
+        if (callbackFunc != null)
         {
             callbackFunc();
         }
@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public TextboxText OnHeroDeathText;
@@ -177,6 +177,13 @@ public class GameManager : MonoBehaviour
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(RestartGame));
         //display Herodeath Text and potential to reload "savestate"/scene
+    }
+
+    public void NextTurn()
+    {
+        enemy.TurnOver();
+        StartCoroutine(TextBoxClickCallback(OpenBattleMenu));
+
     }
 
     public void RestartGame()
@@ -187,7 +194,7 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-                SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
 
         Debug.Log("Hero won");
     }

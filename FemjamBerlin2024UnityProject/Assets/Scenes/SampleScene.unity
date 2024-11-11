@@ -2937,9 +2937,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfTarget: Head
+  ownType: 0
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
+  isActive: 0
   spriteList: []
   chargingText: 
   beforeAttackText: 
@@ -2949,6 +2951,7 @@ MonoBehaviour:
   isBandedText: 
   isDeadText: 
   attacksPetrifiedText: 
+  specialText: []
   currentSprite: {fileID: 1605289286}
 --- !u!1 &401469096
 GameObject:
@@ -3273,9 +3276,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfTarget: Body
+  ownType: 0
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
+  isActive: 0
   spriteList: []
   chargingText: 
   beforeAttackText: 
@@ -3285,6 +3290,7 @@ MonoBehaviour:
   isBandedText: 
   isDeadText: 
   attacksPetrifiedText: 
+  specialText: []
   currentSprite: {fileID: 922622820}
 --- !u!1 &455137659
 GameObject:
@@ -3337,9 +3343,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfTarget: Arm
+  ownType: 0
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
+  isActive: 0
   spriteList: []
   chargingText: 
   beforeAttackText: 
@@ -3349,6 +3357,7 @@ MonoBehaviour:
   isBandedText: 
   isDeadText: 
   attacksPetrifiedText: 
+  specialText: []
   currentSprite: {fileID: 243256617}
 --- !u!1 &474163478
 GameObject:
@@ -3936,14 +3945,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce9e0246fa44fa458352789ce0b6bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 9999
-  currentHealth: 9999
+  maxHealth: 999
+  currentHealth: 999
   healthbar: {fileID: 377885443}
   wing: {fileID: 1761344218}
+  Wing: {fileID: 0}
   mouth: {fileID: 1941045846}
+  Mouth: {fileID: 0}
   tail: {fileID: 917368792}
+  Tail: {fileID: 0}
   arm: {fileID: 338895304}
+  Arm: {fileID: 0}
   eye: {fileID: 598287523}
+  Eye: {fileID: 0}
   bodyPartCount: 5
   currentBodyPart: 0
 --- !u!114 &552027801
@@ -3959,7 +3973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 20
+  currentHealth: 1
   ailment: 0
   holyWet: 0
   prayText: {fileID: 0}
@@ -4598,6 +4612,22 @@ PrefabInstance:
     - target: {fileID: 3356681624862404259, guid: 5bc9d0d0f31d04bee800939699521227, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007854962364776121, guid: 5bc9d0d0f31d04bee800939699521227, type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007854962364776121, guid: 5bc9d0d0f31d04bee800939699521227, type: 3}
+      propertyPath: spriteList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007854962364776121, guid: 5bc9d0d0f31d04bee800939699521227, type: 3}
+      propertyPath: spriteList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 7967272124614638073, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+    - target: {fileID: 4007854962364776121, guid: 5bc9d0d0f31d04bee800939699521227, type: 3}
+      propertyPath: spriteList.Array.data[1].ailment
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6517049043475770998, guid: 5bc9d0d0f31d04bee800939699521227, type: 3}
       propertyPath: m_Name
@@ -6742,9 +6772,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfTarget: Wing
+  ownType: 0
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
+  isActive: 0
   spriteList: []
   chargingText: 
   beforeAttackText: 
@@ -6754,6 +6786,7 @@ MonoBehaviour:
   isBandedText: 
   isDeadText: 
   attacksPetrifiedText: 
+  specialText: []
   currentSprite: {fileID: 191490524}
 --- !u!1 &950776887
 GameObject:
@@ -8615,9 +8648,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfTarget: Tail
+  ownType: 0
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
+  isActive: 0
   spriteList: []
   chargingText: 
   beforeAttackText: 
@@ -8627,6 +8662,7 @@ MonoBehaviour:
   isBandedText: 
   isDeadText: 
   attacksPetrifiedText: 
+  specialText: []
   currentSprite: {fileID: 44432073}
 --- !u!1 &1258645277
 GameObject:

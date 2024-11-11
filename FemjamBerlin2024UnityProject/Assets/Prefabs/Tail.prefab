@@ -109,6 +109,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: ownType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: chargingText
+      value: '[The demon is raising its tail in anticipation.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: afterAttackText
+      value: '[The sharp stinger pierces right through you. Poison is pumped inside
+        your body pushing the blood out your open wound. You take 999 damage.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: beforeAttackText
+      value: '[The demon thrusts its toxic stinger at you.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: 'specialText.Array.data[0]'
+      value: '[The scorpion tail hits your stone hard body and shatters into a thousand
+        pieces. The petrification curse is lifted and you pick up the demon''s stinger.
+        You take 1 damage from the impact.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[0].sprite
       value: 
       objectReference: {fileID: -1680543079, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}

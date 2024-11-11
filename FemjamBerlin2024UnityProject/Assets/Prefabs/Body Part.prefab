@@ -51,9 +51,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfTarget: Body
+  ownType: 0
   isOpenEye: 0
   ailmentState: 0
   enemy: {fileID: 0}
+  isActive: 1
   spriteList:
   - ailment: 0
     sprite: {fileID: 0}
@@ -76,6 +78,8 @@ MonoBehaviour:
   isDeadText: '[The {ATTACKER} is defeated and unable to attack.]'
   attacksPetrifiedText: '[Your rock hard skin protects you from most damage. You
     still take 1 damage and your body breaks free from the curse.]'
+  specialText:
+  - no sepcial text
   currentSprite: {fileID: 7126423667380640694}
 --- !u!1 &3042300741764152315
 GameObject:

@@ -4,8 +4,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public int maxHealth = 9999;
-    public int currentHealth = 9999;
+    public int maxHealth = 999;
+    public int currentHealth = 999;
 
     public GameObject healthbar;
     public void UpdateHealthBar()
@@ -19,15 +19,15 @@ public class Enemy : MonoBehaviour
 
 
     public GameObject wing;
-    private BodyPart Wing;
+    public BodyPart Wing;
     public GameObject mouth;
-    private BodyPart Mouth;
+    public BodyPart Mouth;
     public GameObject tail;
-    private BodyPart Tail;
+    public BodyPart Tail;
     public GameObject arm;
-    private BodyPart Arm;
+    public BodyPart Arm;
     public GameObject eye;
-    private BodyPart Eye;
+    public BodyPart Eye;
 
     public int bodyPartCount = 5;
 
@@ -62,12 +62,13 @@ public class Enemy : MonoBehaviour
     public void CoroutineCheckBodyparts()
     {
 
-        if(bodyPartCount == 1)
+        if (bodyPartCount == 1)
         {
             //eye opens!
             Eye.isOpenEye = false;
-            eye.SetActive(true); 
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeEyeAttack));
+            Eye.isActive=true;
+            eye.SetActive(true);
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(Eye.ChargeAttack));
             MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
             //MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenDead));
         }
@@ -88,17 +89,24 @@ public class Enemy : MonoBehaviour
         Tail = tail.GetComponent<BodyPart>();
         Arm = arm.GetComponent<BodyPart>();
         Eye = eye.GetComponent<BodyPart>();
-        GameManager.gameManager.latestAttacker=Wing;
+        GameManager.gameManager.latestAttacker = Wing;
     }
 
     void Update()
     {
-        
+
+    }
+
+    public void TurnOver()
+    {
+        GetBodyPart(currentBodyPart).ChargeAttack();
+            
+
     }
 
     public void checkForNextBodyPart()
     {
-        if(
+        if (
             !wing.activeInHierarchy &&
             !mouth.activeInHierarchy &&
             !arm.activeInHierarchy &&
@@ -114,35 +122,35 @@ public class Enemy : MonoBehaviour
                 if (wing.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.mouth;
-                GameManager.gameManager.latestAttacker=Mouth;
+                GameManager.gameManager.latestAttacker = Mouth;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.mouth:
                 if (mouth.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.arm;
-                GameManager.gameManager.latestAttacker=Arm;
+                GameManager.gameManager.latestAttacker = Arm;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.arm:
                 if (arm.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.tail;
-                GameManager.gameManager.latestAttacker=Tail;
+                GameManager.gameManager.latestAttacker = Tail;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.tail:
                 if (tail.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.eye;
-                GameManager.gameManager.latestAttacker=Eye;
+                GameManager.gameManager.latestAttacker = Eye;
                 checkForNextBodyPart();
                 break;
             case BodyPartEnum.eye:
                 if (eye.activeInHierarchy)
                     return;
                 currentBodyPart = BodyPartEnum.wing;
-                GameManager.gameManager.latestAttacker=Wing;
+                GameManager.gameManager.latestAttacker = Wing;
                 checkForNextBodyPart();
                 break;
             default:
@@ -152,6 +160,19 @@ public class Enemy : MonoBehaviour
 
     public void OnEnemyTurn()
     {
+        if (GetBodyPart(currentBodyPart).isActive)
+        {
+            GetBodyPart(currentBodyPart).DoAttack();
+        }
+        if (currentBodyPart == BodyPartEnum.eye)
+        {
+            currentBodyPart = BodyPartEnum.wing;
+        }
+        else
+        {
+            currentBodyPart++;
+        }
+        /*
         switch (currentBodyPart)
         {
             case BodyPartEnum.wing:
@@ -185,11 +206,11 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
-
+*/
         //check if all body parts dead, if not set back to = wing; else set to eye
 
     }
-
+/*
     public void ChargeWingAttack()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
@@ -226,13 +247,13 @@ public class Enemy : MonoBehaviour
                     GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
                     break;
                 default:
-                    
+
                     MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.afterAttack));
 
                     //hero will get killed
                     if (GameManager.gameManager.hero.ailment == Ailment.petrified)
                     {
-                        GameManager.gameManager.hero.AffectHealth(-1); 
+                        GameManager.gameManager.hero.AffectHealth(-1);
                         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeMouthAttack));
                     }
                     else
@@ -369,7 +390,7 @@ public class Enemy : MonoBehaviour
         {
 
             //death
-            switch(Tail.ailmentState)
+            switch (Tail.ailmentState)
             {
                 case Ailment.banded:
                     MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenBanded));
@@ -484,7 +505,7 @@ public class Enemy : MonoBehaviour
         else
         {
             switch (Eye.ailmentState)
-            {                
+            {
                 case Ailment.banded:
                     MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenBanded));
                     GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
@@ -511,8 +532,30 @@ public class Enemy : MonoBehaviour
                         GameManager.gameManager.hero.AffectHealth(-9999);
                     break;
             }
-            
+
         }
+
+    }
+*/
+    public BodyPart GetBodyPart(BodyPartEnum ePart)
+    {
+        switch (ePart)
+        {
+            case BodyPartEnum.wing:
+                return Wing;
+            case BodyPartEnum.mouth:
+                return Mouth;
+            case BodyPartEnum.arm:
+                return Arm;
+            case BodyPartEnum.tail:
+                return Tail;
+            case BodyPartEnum.eye:
+                return Eye;
+            default:
+                print("no body part found");
+                return Eye;
+        }
+
 
     }
 

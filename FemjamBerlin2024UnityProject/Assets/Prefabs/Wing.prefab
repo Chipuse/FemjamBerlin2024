@@ -113,6 +113,22 @@ PrefabInstance:
       value: Wing
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: chargingText
+      value: '[The demon''s wing is tensing ]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: afterAttackText
+      value: '[You slam against the wall behind you and take 999 damage.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: beforeAttackText
+      value: '[The demon''s wing slice the air sending a burst of wind towards you.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: 'specialText.Array.data[0]'
+      value: '[The gust of wind hits your petrified body. You take 1 damage.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[0].sprite
       value: 
       objectReference: {fileID: -1468748831, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}

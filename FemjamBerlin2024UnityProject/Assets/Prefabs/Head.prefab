@@ -109,8 +109,47 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: ownType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: NameOfTarget
       value: Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: chargingText
+      value: '[A dim light is coming from the demon''s mouth.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: afterAttackText
+      value: '[Your clothes go up in flames and your skin turns black before your
+        flesh melts off your bones. You take 999 damage.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: beforeAttackText
+      value: '[A hot blast of flames bursts out the demon''s mouth and spreads fire
+        everywhere.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: specialText.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: 'specialText.Array.data[0]'
+      value: '[The ice crystal acts like a protective shield. Right before the final
+        layer of ice melts off the fire stops leaving you soaking wet.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: 'specialText.Array.data[1]'
+      value: '[The demon''s wing is going up in flames.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: 'specialText.Array.data[2]'
+      value: '[The demon''s arm is going up in flames.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: 'specialText.Array.data[3]'
+      value: '[The demon''s tail is going up in flames.]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[0].sprite

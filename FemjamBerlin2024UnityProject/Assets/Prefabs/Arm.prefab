@@ -109,6 +109,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: ownType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: chargingText
+      value: '[The demon is sharpening its claws ready to strike.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: afterAttackText
+      value: '[It grabs your nimble body and squeezes. Your ribs cut into your lungs
+        before they break. A concert of snapping bones and splashing blood plays.
+        You take 999 damage.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: beforeAttackText
+      value: '[The demon''s claw strikes down on you.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: specialText.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[0].sprite
       value: 
       objectReference: {fileID: 8758524231284012726, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
