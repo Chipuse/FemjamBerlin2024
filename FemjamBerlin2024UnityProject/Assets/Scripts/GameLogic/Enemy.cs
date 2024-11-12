@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         {
             //eye opens!
             Eye.isOpenEye = false;
-            Eye.isActive=true;
+            Eye.isActive = true;
             eye.SetActive(true);
             GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(Eye.ChargeAttack));
             MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
     public void TurnOver()
     {
         GetBodyPart(currentBodyPart).ChargeAttack();
-            
+        GameManager.gameManager.latestAttacker = GetBodyPart(currentBodyPart);
 
     }
 
@@ -210,333 +210,333 @@ public class Enemy : MonoBehaviour
         //check if all body parts dead, if not set back to = wing; else set to eye
 
     }
-/*
-    public void ChargeWingAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenCharging));
-    }
-
-    void DoWingAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterWingAttack));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.beforeAttack));
-    }
-
-    public void AfterWingAttack()
-    {
-        if (Wing.ailmentState == Ailment.banded)
+    /*
+        public void ChargeWingAttack()
         {
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.specialCase));
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeMouthAttack));
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenCharging));
         }
-        else
+
+        void DoWingAttack()
         {
-            switch (Wing.ailmentState)
-            {
-                case Ailment.banded:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenBanded));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.petrified:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenPetrified));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.frozen:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenFrozen));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                default:
-
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.afterAttack));
-
-                    //hero will get killed
-                    if (GameManager.gameManager.hero.ailment == Ailment.petrified)
-                    {
-                        GameManager.gameManager.hero.AffectHealth(-1);
-                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeMouthAttack));
-                    }
-                    else
-                        GameManager.gameManager.hero.AffectHealth(-9999);
-                    break;
-            }
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterWingAttack));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.beforeAttack));
         }
-    }
 
-    void ChargeMouthAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenCharging));
-    }
-
-    void DoMouthAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterMouthAttack));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.beforeAttack));
-    }
-
-    public void AfterMouthAttack()
-    {
-        if (GameManager.gameManager.hero.ailment == Ailment.frozen)
+        public void AfterWingAttack()
         {
-            GameManager.gameManager.hero.OnEnterNewAilment(Ailment.wet);
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.specialCase));
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeTailAttack));
-            if (Eye.ailmentState == Ailment.banded)
-            {
-                Eye.KillThisBodyPart();
-            }
             if (Wing.ailmentState == Ailment.banded)
             {
-                Wing.KillThisBodyPart();
+                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.specialCase));
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeMouthAttack));
             }
-            if (Mouth.ailmentState == Ailment.banded)
+            else
             {
-                Mouth.KillThisBodyPart();
+                switch (Wing.ailmentState)
+                {
+                    case Ailment.banded:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenBanded));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.petrified:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenPetrified));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.frozen:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.whenFrozen));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    default:
+
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.wing, AttackTextContext.afterAttack));
+
+                        //hero will get killed
+                        if (GameManager.gameManager.hero.ailment == Ailment.petrified)
+                        {
+                            GameManager.gameManager.hero.AffectHealth(-1);
+                            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeMouthAttack));
+                        }
+                        else
+                            GameManager.gameManager.hero.AffectHealth(-9999);
+                        break;
+                }
             }
-            if (Arm.ailmentState == Ailment.banded)
+        }
+
+        void ChargeMouthAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenCharging));
+        }
+
+        void DoMouthAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterMouthAttack));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.beforeAttack));
+        }
+
+        public void AfterMouthAttack()
+        {
+            if (GameManager.gameManager.hero.ailment == Ailment.frozen)
+            {
+                GameManager.gameManager.hero.OnEnterNewAilment(Ailment.wet);
+                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.specialCase));
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeTailAttack));
+                if (Eye.ailmentState == Ailment.banded)
+                {
+                    Eye.KillThisBodyPart();
+                }
+                if (Wing.ailmentState == Ailment.banded)
+                {
+                    Wing.KillThisBodyPart();
+                }
+                if (Mouth.ailmentState == Ailment.banded)
+                {
+                    Mouth.KillThisBodyPart();
+                }
+                if (Arm.ailmentState == Ailment.banded)
+                {
+                    Arm.KillThisBodyPart();
+                }
+                if (Tail.ailmentState == Ailment.banded)
+                {
+                    Tail.KillThisBodyPart();
+                }
+            }
+            else
+            {
+                switch (Mouth.ailmentState)
+                {
+                    case Ailment.banded:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenBanded));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.petrified:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenPetrified));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.frozen:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenFrozen));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    default:
+                        if (Eye.ailmentState == Ailment.banded)
+                        {
+                            Eye.KillThisBodyPart();
+                        }
+                        if (Wing.ailmentState == Ailment.banded)
+                        {
+                            Wing.KillThisBodyPart();
+                        }
+                        if (Mouth.ailmentState == Ailment.banded)
+                        {
+                            Mouth.KillThisBodyPart();
+                        }
+                        if (Arm.ailmentState == Ailment.banded)
+                        {
+                            Arm.KillThisBodyPart();
+                        }
+                        if (Tail.ailmentState == Ailment.banded)
+                        {
+                            Tail.KillThisBodyPart();
+                        }
+                        switch (GameManager.gameManager.hero.ailment)
+                        {
+                            case Ailment.petrified:
+                                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.afterAttack));
+                                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeTailAttack));
+                                //hero will get killed
+                                GameManager.gameManager.hero.AffectHealth(-1);
+                                break;
+                            case Ailment.frozen:
+                                break;
+                            default:
+                                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.afterAttack));
+
+                                //hero will get killed
+                                GameManager.gameManager.hero.AffectHealth(-9999);
+                                break;
+                        }
+                        break;
+                }
+            }
+
+        }
+
+
+        void ChargeTailAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenCharging));
+        }
+
+
+        void DoTailAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTailAttack));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.beforeAttack));
+        }
+
+        public void AfterTailAttack()
+        {
+            if (GameManager.gameManager.hero.ailment == Ailment.petrified)
+            {
+                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.specialCase));
+                Tail.KillThisBodyPart();
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeArmAttack));
+                GameManager.gameManager.hero.inventory.Add(Items.stinger);
+            }
+            else
+            {
+
+                //death
+                switch (Tail.ailmentState)
+                {
+                    case Ailment.banded:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenBanded));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.petrified:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenPetrified));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.frozen:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenFrozen));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    default:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.afterAttack));
+
+                        //hero will get killed
+                        if (GameManager.gameManager.hero.ailment == Ailment.petrified)
+                        {
+                            GameManager.gameManager.hero.AffectHealth(-1);
+                            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeArmAttack));
+                        }
+                        else
+                            GameManager.gameManager.hero.AffectHealth(-9999);
+                        break;
+                }
+            }
+
+        }
+
+        void ChargeArmAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenCharging));
+        }
+
+        void DoArmAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterArmAttack));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.beforeAttack));
+        }
+
+        public void AfterArmAttack()
+        {
+            if (GameManager.gameManager.hero.holyWet)
             {
                 Arm.KillThisBodyPart();
+                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.specialCase));
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeEyeAttack));
             }
-            if (Tail.ailmentState == Ailment.banded)
+            else
             {
-                Tail.KillThisBodyPart();
-            }
-        }
-        else
-        {
-            switch (Mouth.ailmentState)
-            {
-                case Ailment.banded:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenBanded));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.petrified:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenPetrified));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.frozen:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.whenFrozen));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                default:
-                    if (Eye.ailmentState == Ailment.banded)
-                    {
-                        Eye.KillThisBodyPart();
-                    }
-                    if (Wing.ailmentState == Ailment.banded)
-                    {
-                        Wing.KillThisBodyPart();
-                    }
-                    if (Mouth.ailmentState == Ailment.banded)
-                    {
-                        Mouth.KillThisBodyPart();
-                    }
-                    if (Arm.ailmentState == Ailment.banded)
-                    {
-                        Arm.KillThisBodyPart();
-                    }
-                    if (Tail.ailmentState == Ailment.banded)
-                    {
-                        Tail.KillThisBodyPart();
-                    }
-                    switch (GameManager.gameManager.hero.ailment)
-                    {
-                        case Ailment.petrified:
-                            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.afterAttack));
-                            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeTailAttack));
-                            //hero will get killed
-                            GameManager.gameManager.hero.AffectHealth(-1);
-                            break;
-                        case Ailment.frozen:
-                            break;
-                        default:
-                            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.mouth, AttackTextContext.afterAttack));
-
-                            //hero will get killed
-                            GameManager.gameManager.hero.AffectHealth(-9999);
-                            break;
-                    }
-                    break;
-            }
-        }
-
-    }
-
-
-    void ChargeTailAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenCharging));
-    }
-
-
-    void DoTailAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTailAttack));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.beforeAttack));
-    }
-
-    public void AfterTailAttack()
-    {
-        if (GameManager.gameManager.hero.ailment == Ailment.petrified)
-        {
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.specialCase));
-            Tail.KillThisBodyPart();
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeArmAttack));
-            GameManager.gameManager.hero.inventory.Add(Items.stinger);
-        }
-        else
-        {
-
-            //death
-            switch (Tail.ailmentState)
-            {
-                case Ailment.banded:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenBanded));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.petrified:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenPetrified));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.frozen:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.whenFrozen));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                default:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.tail, AttackTextContext.afterAttack));
-
-                    //hero will get killed
-                    if (GameManager.gameManager.hero.ailment == Ailment.petrified)
-                    {
-                        GameManager.gameManager.hero.AffectHealth(-1);
-                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeArmAttack));
-                    }
-                    else
-                        GameManager.gameManager.hero.AffectHealth(-9999);
-                    break;
-            }
-        }
-
-    }
-
-    void ChargeArmAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenCharging));
-    }
-
-    void DoArmAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterArmAttack));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.beforeAttack));
-    }
-
-    public void AfterArmAttack()
-    {
-        if (GameManager.gameManager.hero.holyWet)
-        {
-            Arm.KillThisBodyPart();
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.specialCase));
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeEyeAttack));
-        }
-        else
-        {
-            switch (Arm.ailmentState)
-            {
-                case Ailment.banded:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenBanded));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.petrified:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenPetrified));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.frozen:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenFrozen));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                default:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.afterAttack));
-
-                    //hero will get killed
-                    if (GameManager.gameManager.hero.ailment == Ailment.petrified)
-                    {
-                        GameManager.gameManager.hero.AffectHealth(-1);
+                switch (Arm.ailmentState)
+                {
+                    case Ailment.banded:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenBanded));
                         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    }
-                    else
-                        GameManager.gameManager.hero.AffectHealth(-9999);
-                    break;
+                        break;
+                    case Ailment.petrified:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenPetrified));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.frozen:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.whenFrozen));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    default:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.arm, AttackTextContext.afterAttack));
+
+                        //hero will get killed
+                        if (GameManager.gameManager.hero.ailment == Ailment.petrified)
+                        {
+                            GameManager.gameManager.hero.AffectHealth(-1);
+                            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        }
+                        else
+                            GameManager.gameManager.hero.AffectHealth(-9999);
+                        break;
+                }
             }
-        }
-
-    }
-
-    void ChargeEyeAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
-    }
-
-
-    void DoEyeAttack()
-    {
-        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterEyeAttack));
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.beforeAttack));
-    }
-
-    public void AfterEyeAttack()
-    {
-        if (Eye.isOpenEye == false)
-        {
-            Eye.isOpenEye = true;
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.ChargeEyeAttack));
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.eyeJustOpened));
 
         }
-        else if (Eye.ailmentState == Ailment.blind)
+
+        void ChargeEyeAttack()
         {
-            //stuned
             GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.specialCase));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
         }
-        else
-        {
-            switch (Eye.ailmentState)
-            {
-                case Ailment.banded:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenBanded));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.petrified:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenPetrified));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                case Ailment.frozen:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenFrozen));
-                    GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
-                    break;
-                default:
-                    MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.afterAttack));
 
-                    //hero will get killed
-                    if (GameManager.gameManager.hero.ailment == Ailment.petrified)
-                    {
-                        GameManager.gameManager.hero.AffectHealth(-1);
-                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeEyeAttack));
-                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
-                    }
-                    else
-                        GameManager.gameManager.hero.AffectHealth(-9999);
-                    break;
+
+        void DoEyeAttack()
+        {
+            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterEyeAttack));
+            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.beforeAttack));
+        }
+
+        public void AfterEyeAttack()
+        {
+            if (Eye.isOpenEye == false)
+            {
+                Eye.isOpenEye = true;
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.ChargeEyeAttack));
+                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.eyeJustOpened));
+
+            }
+            else if (Eye.ailmentState == Ailment.blind)
+            {
+                //stuned
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.specialCase));
+            }
+            else
+            {
+                switch (Eye.ailmentState)
+                {
+                    case Ailment.banded:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenBanded));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.petrified:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenPetrified));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    case Ailment.frozen:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenFrozen));
+                        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.OpenBattleMenu));
+                        break;
+                    default:
+                        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.afterAttack));
+
+                        //hero will get killed
+                        if (GameManager.gameManager.hero.ailment == Ailment.petrified)
+                        {
+                            GameManager.gameManager.hero.AffectHealth(-1);
+                            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(ChargeEyeAttack));
+                            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
+                        }
+                        else
+                            GameManager.gameManager.hero.AffectHealth(-9999);
+                        break;
+                }
+
             }
 
         }
-
-    }
-*/
+    */
     public BodyPart GetBodyPart(BodyPartEnum ePart)
     {
         switch (ePart)

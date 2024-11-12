@@ -229,6 +229,7 @@ public class BodyPart : MonoBehaviour, ITargetable
     {
         AffectHealth(-242);
         isActive = false;
+        OnEnterNewAilment(Ailment.dead);
     }
 
     public void AfterTargetedByWater()
@@ -306,22 +307,6 @@ public class BodyPart : MonoBehaviour, ITargetable
 
     public void DoAttack()
     {
-        if (isActive)
-        {
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterAttack));
-            MostTexts.mostTexts.FillTextBox(beforeAttackText);
-        }
-        else
-        {
-            MostTexts.mostTexts.FillTextBox(isDeadText);
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.NextTurn));
-
-        }
-    }
-
-    public void AfterAttack()
-    {
-
         switch (ailmentState)
         {
             case Ailment.banded:
@@ -333,10 +318,24 @@ public class BodyPart : MonoBehaviour, ITargetable
             case Ailment.frozen:
                 MostTexts.mostTexts.FillTextBox(isFrozenText);
                 break;
-            default:
-                EffectCheck();
+            case Ailment.dead:
+                MostTexts.mostTexts.FillTextBox(isDeadText);
                 break;
+            default:
+                GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterAttack));
+                MostTexts.mostTexts.FillTextBox(beforeAttackText);
+                return;
         }
+        GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.NextTurn));
+
+    }
+
+    public void AfterAttack()
+    {
+
+        
+                EffectCheck();
+                
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.NextTurn));
 
 
