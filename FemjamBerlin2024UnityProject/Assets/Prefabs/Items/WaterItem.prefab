@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &666983902611726960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Name
+      value: WaterItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 160d7f1cb431c1a42a01e7b3a83ac1e4, type: 3}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: ailment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemName
+      value: Steve IX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: applyAilment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnBossText
+      value: 'Go, Steve! I choose you! [You throw Steve at the {TARGET}]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: descriptionText
+      value: 'Lucindra''s Familiar. This one had actually traveled with us for a
+        while now. Most of them didn''t even last a whole adventure. I don''t know
+        why she trusted me with those. I''m horrible with animals. [It''s a goldfish.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnBossText
+      value: '[{TARGET} got wet.] RIP Steve.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnPlayerText
+      value: '[You drink the water.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnPlayerText
+      value: 'Why the fuck did I do that? [Nothing happened...]'
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7184118888062666420, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22099fffb761c4251afb032180ef786f, type: 3}

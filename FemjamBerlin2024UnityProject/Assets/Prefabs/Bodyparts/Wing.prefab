@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7698274008458463004
+--- !u!1001 &3044372958513958991
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1567026266798717596, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_Name
-      value: Arm
+      value: Wing
       objectReference: {fileID: 0}
     - target: {fileID: 1765043241524412480, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1225671663, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+      objectReference: {fileID: -1468748831, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -50,15 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.77
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.77
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.77
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -90,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 127
+      value: 139
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 21.50002
+      value: 51.50002
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -109,47 +109,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: ownType
-      value: 2
+      propertyPath: NameOfTarget
+      value: Wing
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: chargingText
-      value: '[The demon is sharpening its claws ready to strike.]'
+      value: '[The demon''s wing is tensing.]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: afterAttackText
-      value: '[It grabs your nimble body and squeezes. Your ribs cut into your lungs
-        before they break. A concert of snapping bones and splashing blood plays.
-        You take 999 damage.]'
+      value: '[You slam against the wall behind you and take 999 damage.]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: beforeAttackText
-      value: '[The demon''s claw strikes down on you.]'
+      value: '[The demon''s wing slice the air sending a burst of wind towards you.]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: specialText.Array.size
-      value: 1
+      propertyPath: 'specialText.Array.data[0]'
+      value: '[The gust of wind hits your petrified body. You take 1 damage.]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 8758524231284012726, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+      objectReference: {fileID: -1468748831, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[1].sprite
       value: 
-      objectReference: {fileID: -2496821670673441181, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+      objectReference: {fileID: 817873152, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[2].sprite
       value: 
-      objectReference: {fileID: 6728458466719791709, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+      objectReference: {fileID: 642156304, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[3].sprite
       value: 
-      objectReference: {fileID: -1703434474865789833, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+      objectReference: {fileID: 2097173957, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[4].sprite
       value: 
-      objectReference: {fileID: -925134219673022747, guid: 2d7aafe53b9e1014999664b34f1ce22f, type: 3}
+      objectReference: {fileID: -977212364, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

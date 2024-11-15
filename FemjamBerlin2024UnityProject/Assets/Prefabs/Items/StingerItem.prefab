@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &666983902611726960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Name
+      value: StingerItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 018cf63040fa88d45af8a209ba81ff42, type: 3}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: ailment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemName
+      value: Unbreakable Bandages
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: applyAilment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnBossText
+      value: 'You''re ugly as hell. Better wrap you up! [You throw the Bandages at
+        the {TARGET}.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: descriptionText
+      value: 'These used to get us through all sorts of disastrous situations. If
+        one of them would have survived I could have healed them and we would have
+        stood a chance. Although they might also have killed us faster in this fight.
+        They are highly flammable. [Fully heals hero.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnBossText
+      value: '[The bandages wrap tightly around the {TARGET}.] Yeah, no. That didn''t
+        help... Still ugly.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: healPlayerAmount
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnPlayerText
+      value: '[You wrap the bandages around yourself.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnPlayerText
+      value: 'That worked better than I expected. [You restored all of your health]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434732324712628647, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2292953572566671971}
+    - target: {fileID: 6434732324712628647, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSelected
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7184118888062666420, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+    - {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2292953572566671971}
+  m_SourcePrefab: {fileID: 100100000, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+--- !u!1 &3872473272069966841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+  m_PrefabInstance: {fileID: 666983902611726960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2292953572566671971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872473272069966841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404823396e4c6429388eb4b4c78333f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Stinger
+  itemType: 5
+  sprite: {fileID: 21300000, guid: 603f2b7573c94404d9772bc1a275d757, type: 3}
+  textboxText: {fileID: 0}
+  applyAilment: 1
+  ailment: 5
+  damage: 30
+  healPlayerAmount: 0
+  descriptionText: 'This fell off earlier. I better not poke myself with that thing.
+    [Damages target.]'
+  usedOnPlayerText: '[You touch the Stinger and poke yourself.]'
+  effectOnPlayerText: 'Yep, that''s poisonous. [You take 30 damage.]'
+  usedOnBossText: 'How would you like a taste of your own poison? [You throw the
+    Stinger at the {TARGET}]'
+  effectOnBossText: '[The demon takes 30 damage.] Great... What now?'

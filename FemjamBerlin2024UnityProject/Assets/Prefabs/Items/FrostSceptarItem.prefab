@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &666983902611726960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Name
+      value: FrostSceptarItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b79260c4191b1fa45bb650ef2f69c8b1, type: 3}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: ailment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemName
+      value: Frost Scepter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: applyAilment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnBossText
+      value: 'I hope this works. [You throw the Scepter at the {TARGET}] '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: descriptionText
+      value: 'Peternius had given me this Scepter after he got his new one from Merlin.
+        He offered to show me the ropes but I never took him up on it. I wish I did.
+        [Freezes the target for 1 turn.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnBossText
+      value: '[Slowly a wave of ice crystals creeps along the {TARGET} until it is
+        completely frozen over.] And they thought Hell couldn''t be frozen over.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnPlayerText
+      value: 'What happens if I do this? [You smash the Scepter in front of you.] '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnPlayerText
+      value: '[Your body is stuck in a solid crystal of ice.] Oops.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7184118888062666420, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22099fffb761c4251afb032180ef786f, type: 3}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3751586071283625198
+--- !u!1001 &5750542045602272490
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1567026266798717596, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_Name
-      value: Tail
+      value: Eye
       objectReference: {fileID: 0}
-    - target: {fileID: 1765043241524412480, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1680543079, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -49,18 +45,6 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -90,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 271
+      value: -73.9
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.500018
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7015292802293791305, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -110,47 +94,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: ownType
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: NameOfTarget
+      value: Eye
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: chargingText
-      value: '[The demon is raising its tail in anticipation.]'
+      value: '[The eye is staring at you eerily. It''s giving you goosebumps.] Take
+        a picture. Lasts longer.'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: afterAttackText
-      value: '[The sharp stinger pierces right through you. Poison is pumped inside
-        your body pushing the blood out your open wound. You take 999 damage.]'
+      value: '[Your last strain of sanity leaves you before everything turns to black.
+        You die.]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: beforeAttackText
-      value: '[The demon thrusts its toxic stinger at you.]'
+      value: Why am I even trying? I should just give up...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
+      propertyPath: spriteList.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: 'specialText.Array.data[0]'
-      value: '[The scorpion tail hits your stone hard body and shatters into a thousand
-        pieces. The petrification curse is lifted and you pick up the demon''s stinger.
-        You take 1 damage from the impact.]'
+      value: '[The Eye is still struggling to find its focus. You have one last chance
+        to win this fight!]'
       objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
       propertyPath: spriteList.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -1680543079, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+      objectReference: {fileID: 1722830688, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: spriteList.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: 342296901, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+      propertyPath: spriteList.Array.data[1].ailment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: spriteList.Array.data[2].sprite
-      value: 
-      objectReference: {fileID: 794541975, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+      propertyPath: spriteList.Array.data[2].ailment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: spriteList.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: -2018448917, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+      propertyPath: spriteList.Array.data[3].ailment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8669646295995755091, guid: 6f0a24cdc2086461d8299c08b83bd54c, type: 3}
-      propertyPath: spriteList.Array.data[4].sprite
-      value: 
-      objectReference: {fileID: -1644661642, guid: d1220795093b0ac48ab3b048f25521d2, type: 3}
+      propertyPath: spriteList.Array.data[4].ailment
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

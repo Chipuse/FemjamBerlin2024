@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5577316933348526505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Name
+      value: HolyWaterItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594970636744855939, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: damage
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c6e1ae361587bc488afa4ca6fd2e8be, type: 3}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemName
+      value: Holy Water (& Steve)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: itemType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnBossText
+      value: 'The body of Steve compels you! [You throw the Holy Water at the {TARGET}.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: descriptionText
+      value: 'I guess praying turned Steve''s water into holy water. This might actually
+        be helpful. Demons avoid it like the plague. Actually that''s not true...
+        Demons loooove the plague. [Heals 100 HP. Damages demons.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnBossText
+      value: '[The {TARGET}''s flesh melts away like thick tar leaving behind only
+        bones and an insufferable stench.] I thought a shower might help with your
+        odor but it just made it worse...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: healPlayerAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: usedOnPlayerText
+      value: '[You drink the holy water.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: effectOnPlayerText
+      value: 'That was surprisingly refreshing. Thanks God! [You recover 100 HP.]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434732324712628647, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1922527351139127236}
+    - target: {fileID: 6434732324712628647, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSelected
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6429006942911933654, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1922527351139127236}
+  m_SourcePrefab: {fileID: 100100000, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+--- !u!1 &8186083474411429920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4394479416982350217, guid: 22099fffb761c4251afb032180ef786f, type: 3}
+  m_PrefabInstance: {fileID: 5577316933348526505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1922527351139127236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186083474411429920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3849f8259f12acc4587d91886c9adef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Holy Water (& Steve)
+  itemType: 1
+  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1c6e1ae361587bc488afa4ca6fd2e8be, type: 3}
+  textboxText: {fileID: 0}
+  applyAilment: 0
+  ailment: 0
+  damage: 242
+  healPlayerAmount: 100
+  descriptionText: 'I guess praying turned Steve''s water into holy water. This might
+    actually be helpful. Demons avoid it like the plague. Actually that''s not true...
+    Demons loooove the plague. [Heals 100 HP. Damages demons.]'
+  usedOnPlayerText: '[You drink the holy water.]'
+  effectOnPlayerText: 'That was surprisingly refreshing. Thanks God! [You recover
+    100 HP.]'
+  usedOnBossText: 'The body of Steve compels you! [You throw the Holy Water at the
+    {TARGET}.]'
+  effectOnBossText: '[The {TARGET}''s flesh melts away like thick tar leaving behind
+    only bones and an insufferable stench.] I thought a shower might help with your
+    odor but it just made it worse...'
