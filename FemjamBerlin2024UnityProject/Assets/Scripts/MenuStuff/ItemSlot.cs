@@ -6,15 +6,10 @@ public class ItemSlot : MonoBehaviour
     public BaseItem item;
     public Image image;
 
-    public void OnItemUsed()
-    {
-        GameManager.gameManager.OpenCancelMenu();
-        GameManager.gameManager.chosenItem = item;
-        MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(itemType, ItemTextContext.description));
-    }
+
 
     public void OnEnable()
-    {
+    {/*
         //Set Images and Set 
         switch (itemType)
         {
@@ -38,7 +33,7 @@ public class ItemSlot : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
         if (image == null)
             image = GetComponent<Image>();
         image.sprite = SpriteReferencer.spriteReferencer.ItemSpriteDict[itemType];

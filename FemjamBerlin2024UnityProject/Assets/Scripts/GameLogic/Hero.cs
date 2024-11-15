@@ -26,6 +26,8 @@ public class Hero : MonoBehaviour, ITargetable
     //inventory
     public List<Items> inventory = new List<Items>();
 
+    
+
     void Start()
     {
         inventory.Add(Items.water);
@@ -34,6 +36,8 @@ public class Hero : MonoBehaviour, ITargetable
         inventory.Add(Items.bandaid);
         UpdateHealthBar();
     }
+
+   
 
     public void RemoveItem(Items _item)
     {
@@ -81,13 +85,13 @@ public class Hero : MonoBehaviour, ITargetable
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.description));
         GameManager.gameManager.chosenItem = null;
     }
-
+/*
     public void OnAttack(ITargetable _target)
     {
         // deal damage to target
         _target.AfterTargetedByBasicAttack();
     }
-
+*/
     public void OnUseItem(BaseItem item)
     {
 
@@ -170,7 +174,7 @@ public class Hero : MonoBehaviour, ITargetable
                 break;
         }
     }
-
+/*
     void ITargetable.TargetedByWater()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByWater));
@@ -216,7 +220,7 @@ public class Hero : MonoBehaviour, ITargetable
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByBasicAttack));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.usedOnPlayer));
     }
-
+*/
     public void AffectHealth(int _deltaHealth)
     {
         int deltaHealth = _deltaHealth;
@@ -264,7 +268,7 @@ public class Hero : MonoBehaviour, ITargetable
         }
 
     }
-
+/*
     public void AfterTargetedByWater()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
@@ -309,11 +313,12 @@ public class Hero : MonoBehaviour, ITargetable
         OnEnterNewAilment(Ailment.blind);
         AffectHealth(-30);
     }
-
+*/
     public void AfterTargetedByBasicAttack()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.effectOnPlayer));
         AffectHealth(-10);
     }
+    
 }

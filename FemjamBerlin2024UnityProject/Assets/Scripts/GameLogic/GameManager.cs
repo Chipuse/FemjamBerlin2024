@@ -43,8 +43,27 @@ public class GameManager : MonoBehaviour
     public GameObject cancelTargetMenu;
     public GameObject nextMenu;
 
+    private string lastText="";
+
+    public List<BaseItem> itemList = new List<BaseItem>();
+    public Dictionary<Items, BaseItem> itemDic = new Dictionary<Items, BaseItem>();
+
+     private void ConvertItemsToDictionary(){
+        foreach(BaseItem i in itemList){
+            itemDic.Add( i.itemType,i);
+
+        }
+    }
+
+    void Start(){
+                ConvertItemsToDictionary();
+
+    }
+
     public void OpenBattleMenu()
     {
+        RecoverLastText();
+
         if (hero.ailment == Ailment.frozen || hero.ailment == Ailment.petrified)
         {
             hero.OnEnterNewAilment(Ailment.neutral);
@@ -66,7 +85,20 @@ public class GameManager : MonoBehaviour
 
         itemMenu.gameObject.SetActive(true);
         disableTargeting();
+        
+        print("deactivated ");
+        foreach(BaseItem i in itemList){
+            i.gameObject.SetActive(false);
+            
 
+        }
+
+        foreach(Items i in hero.inventory){
+            BaseItem cItem;
+            itemDic.TryGetValue(i,out cItem);
+            cItem?.gameObject.SetActive(true);
+        }
+/*
         if (SlotList.Count <= 0)
         {
             //fetch slotscripts
@@ -85,6 +117,7 @@ public class GameManager : MonoBehaviour
                 SlotList[i].gameObject.SetActive(true);
             }
         }
+        */
     }
 
     public BaseItem chosenItem;
@@ -104,6 +137,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SaveLastText(){
+        lastText=textBoxBox.text;
+    }
+    public void RecoverLastText(){
+        if(lastText!=""){
+        textBoxBox.text=lastText;
+        lastText="";
+        }
+    }
+
+
     public delegate void SimpleGameEvent();
     public SimpleGameEvent enableTargeting;
     public SimpleGameEvent disableTargeting;
@@ -113,12 +157,12 @@ public class GameManager : MonoBehaviour
         latestTarget = _target;
         if (chosenItem != null)
         {
-            chosenItem.OnUse(_target);
+            chosenItem.OnUse();
         }
         else
         {
             //basic attack of hero was selected
-            hero.OnAttack(_target);
+           // hero.OnAttack(_target);
         }
         OpenNextMenu();
         disableTargeting();

@@ -65,11 +65,12 @@ public class Enemy : MonoBehaviour
         if (bodyPartCount == 1)
         {
             //eye opens!
+            eye.SetActive(true);
             Eye.isOpenEye = false;
             Eye.isActive = true;
-            eye.SetActive(true);
-            GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(Eye.ChargeAttack));
-            MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
+            currentBodyPart= BodyPartEnum.eye;
+            //GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(Eye.ChargeAttack));
+            //MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenCharging));
             //MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(BodyPartEnum.eye, AttackTextContext.whenDead));
         }
         else
@@ -99,6 +100,8 @@ public class Enemy : MonoBehaviour
 
     public void TurnOver()
     {
+        CheckBodyParts();
+
         GetBodyPart(currentBodyPart).ChargeAttack();
         GameManager.gameManager.latestAttacker = GetBodyPart(currentBodyPart);
 
@@ -160,6 +163,9 @@ public class Enemy : MonoBehaviour
 
     public void OnEnemyTurn()
     {
+        if(GameManager.gameManager.hero.currentHealth<=0){
+            GameManager.gameManager.RestartGame();
+        }
         if (GetBodyPart(currentBodyPart).isActive)
         {
             GetBodyPart(currentBodyPart).DoAttack();

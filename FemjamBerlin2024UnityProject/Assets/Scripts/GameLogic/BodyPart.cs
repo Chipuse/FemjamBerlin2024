@@ -124,7 +124,7 @@ public class BodyPart : MonoBehaviour, ITargetable
                 }
                 */
     }
-
+/*
     void ITargetable.TargetedByWater()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByWater));
@@ -161,13 +161,14 @@ public class BodyPart : MonoBehaviour, ITargetable
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByStinger));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.stinger, ItemTextContext.usedOnBoss));
     }
+    
 
     void ITargetable.TargetedByBasicAttack()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(AfterTargetedByBasicAttack));
         MostTexts.mostTexts.FillTextBox(MostTexts.mostTexts.FindText(Items.backPack, ItemTextContext.usedOnBoss));
     }
-
+*/
     public void AffectHealth(int _deltaHealth)
     {
         StartCoroutine(AffectHealthCoroutine(_deltaHealth));
@@ -207,7 +208,6 @@ public class BodyPart : MonoBehaviour, ITargetable
                 yield return new WaitForSeconds(GlobalVariables.blinkTime);
             }
             transform.gameObject.SetActive(false);
-            enemy.CheckBodyParts();
             //boom
         }
         if (enemy.currentHealth <= 0)
@@ -231,7 +231,7 @@ public class BodyPart : MonoBehaviour, ITargetable
         isActive = false;
         OnEnterNewAilment(Ailment.dead);
     }
-
+/*
     public void AfterTargetedByWater()
     {
         GameManager.gameManager.StartCoroutine(GameManager.gameManager.TextBoxClickCallback(GameManager.gameManager.enemy.OnEnemyTurn));
@@ -284,6 +284,7 @@ public class BodyPart : MonoBehaviour, ITargetable
         }
     }
 
+*/
     public void AfterTargetedByBasicAttack()
     {
         AffectHealth(-1);

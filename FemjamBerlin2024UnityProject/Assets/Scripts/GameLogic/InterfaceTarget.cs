@@ -6,7 +6,7 @@ public interface ITargetable
     public void OnEnterNewAilment(Ailment _ailment);
 
     public void AffectHealth(int _deltaHealth);
-
+/*
     public void TargetedByWater();
     public void AfterTargetedByWater();
     public void TargetedByHolyWater();
@@ -21,4 +21,6 @@ public interface ITargetable
     public void AfterTargetedByStinger();
     public void TargetedByBasicAttack();
     public void AfterTargetedByBasicAttack();
+    */
 }
+

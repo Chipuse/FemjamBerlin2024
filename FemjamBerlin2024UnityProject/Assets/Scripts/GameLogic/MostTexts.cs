@@ -62,7 +62,7 @@ public class MostTexts : MonoBehaviour
     //callbacks for different textboxes:
 
     //WaterItem Callbacks
-    public void OnWaterUsedOnPlayer()
+/*    public void OnWaterUsedOnPlayer()
     {
         GameManager.gameManager.latestTarget.TargetedByHolyWater();
     }
@@ -207,6 +207,7 @@ public class MostTexts : MonoBehaviour
     {
 
     }
+    */
 }
 [System.Serializable]
 public struct itemText
