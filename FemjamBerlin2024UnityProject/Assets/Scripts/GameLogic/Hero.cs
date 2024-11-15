@@ -10,7 +10,7 @@ public class Hero : MonoBehaviour, ITargetable
 
 
     public bool holyWet = false;
-    public TextboxText prayText;
+    public string prayText;
 
     public TextboxText OnAttackText;
 
@@ -59,7 +59,7 @@ public class Hero : MonoBehaviour, ITargetable
     public void OnPray()
     {
         //Heal some damage, turn water into holy water
-        AffectHealth(10);
+        AffectHealth(1);
         if (ailment == Ailment.wet)
             holyWet = true;
         foreach (var item in inventory)
